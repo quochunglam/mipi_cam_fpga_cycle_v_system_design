@@ -1,0 +1,18 @@
+17:10:32 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling mipi_camera_config.c to obj/default/mipi_camera_config.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mipi_camera_config.o mipi_camera_config.c
+Info: Linking mipicam.elf
+nios2-elf-g++  -T'../mipicam_bsp//linker.x' -msys-crt0='../mipicam_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../mipicam_bsp/   -Wl,-Map=mipicam.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o mipicam.elf obj/default/I2C_core.o obj/default/auto_focus.o obj/default/main.o obj/default/mipi_bridge_config.o obj/default/mipi_camera_config.o -lm -msys-lib=m
+nios2-elf-insert mipicam.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x400810d8 --timestamp 1643928657 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name top --quartus_project_dir "C:/Users/quoch/OneDrive/Documents/github/mipi_cam_fpga_cycle_v_system_design/hardware_design/rtl_design" --jdi ../..//output_files/PCIe_DDR3.jdi --sopcinfo C:/Users/quoch/OneDrive/Documents/github/mipi_cam_fpga_cycle_v_system_design/hardware_design/rtl_design/software/mipicam_bsp/../../top.sopcinfo
+Info: (mipicam.elf) 80 KBytes program size (code + initialized data).
+Info:               38 KBytes free for stack + heap.
+Info: Creating mipicam.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source mipicam.elf >mipicam.objdump
+[mipicam build complete]
+
+17:10:33 Build Finished (took 1s.764ms)
+

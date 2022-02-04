@@ -1,0 +1,744 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50_B3B'
+Slack : -1.414
+TNS   : -2.826
+
+Type  : Slow 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 1.353
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 2.659
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 4.881
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 7.521
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 7.954
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50_B6A'
+Slack : 8.971
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'altera_reserved_tck'
+Slack : 9.571
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50_B5B'
+Slack : 15.587
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.239
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.256
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.273
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 0.278
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50_B3B'
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50_B6A'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50_B5B'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 1.060
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 5.616
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50_B3B'
+Slack : 7.371
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 10.158
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 10.631
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50_B5B'
+Slack : 11.490
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 14.275
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 20.261
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.506
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.694
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50_B3B'
+Slack : 0.760
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.948
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 1.056
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 1.084
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50_B5B'
+Slack : 5.388
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.496
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_dq_write_clk'
+Slack : 0.558
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'alt_cal_av_edge_detect_clk'
+Slack : 4.314
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PCIE_REFCLK_p'
+Slack : 4.998
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 6.065
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 7.478
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B3B'
+Slack : 8.364
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'sv_reconfig_pma_testbus_clk_0'
+Slack : 8.478
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.971
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B6A'
+Slack : 9.244
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B4A'
+Slack : 9.839
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.397
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 18.684
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 21.708
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50_B3B'
+Slack : -1.294
+TNS   : -2.588
+
+Type  : Slow 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 1.285
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 2.700
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 4.649
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50_B6A'
+Slack : 5.815
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 7.909
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 8.144
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'altera_reserved_tck'
+Slack : 9.640
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50_B5B'
+Slack : 15.313
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.235
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.256
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.284
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.329
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50_B3B'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50_B6A'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50_B5B'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 0.966
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 5.781
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50_B3B'
+Slack : 7.663
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 10.400
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 10.860
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50_B5B'
+Slack : 11.434
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 14.457
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 20.332
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.639
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50_B3B'
+Slack : 0.675
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.859
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 0.948
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 1.012
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50_B5B'
+Slack : 5.309
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_dq_write_clk'
+Slack : 0.565
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'alt_cal_av_edge_detect_clk'
+Slack : 4.308
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PCIE_REFCLK_p'
+Slack : 4.999
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 6.040
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 7.483
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B3B'
+Slack : 8.339
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'sv_reconfig_pma_testbus_clk_0'
+Slack : 8.404
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.923
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B6A'
+Slack : 9.330
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B4A'
+Slack : 9.833
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.385
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 18.670
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 21.645
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50_B3B'
+Slack : 0.259
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 1.983
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 4.805
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50_B6A'
+Slack : 8.761
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 9.928
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 11.565
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 11.590
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'altera_reserved_tck'
+Slack : 13.236
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50_B5B'
+Slack : 17.681
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.056
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50_B3B'
+Slack : 0.176
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50_B6A'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50_B5B'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 11.745
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 12.180
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 12.777
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50_B3B'
+Slack : 12.805
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50_B5B'
+Slack : 15.023
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 15.917
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 21.255
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50_B3B'
+Slack : 0.351
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 0.428
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 0.537
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50_B5B'
+Slack : 2.987
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.782
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_dq_write_clk'
+Slack : 0.884
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'alt_cal_av_edge_detect_clk'
+Slack : 4.580
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PCIE_REFCLK_p'
+Slack : 4.996
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 6.373
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 7.483
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B3B'
+Slack : 8.774
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.857
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B6A'
+Slack : 9.135
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'sv_reconfig_pma_testbus_clk_0'
+Slack : 9.250
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B4A'
+Slack : 9.919
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.344
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 18.304
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 22.010
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50_B3B'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 2.003
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 5.000
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 10.350
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50_B6A'
+Slack : 11.021
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 11.764
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 11.777
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'altera_reserved_tck'
+Slack : 13.680
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50_B5B'
+Slack : 17.721
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.127
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 0.127
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50_B3B'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50_B6A'
+Slack : 0.171
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50_B5B'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 0.351
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 12.336
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 12.514
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 12.904
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50_B3B'
+Slack : 13.438
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50_B5B'
+Slack : 15.237
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 16.113
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 21.379
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 0.242
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.269
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50_B3B'
+Slack : 0.281
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 0.488
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50_B5B'
+Slack : 2.855
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_afi_clk'
+Slack : 0.778
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_dq_write_clk'
+Slack : 0.882
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'alt_cal_av_edge_detect_clk'
+Slack : 4.595
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PCIE_REFCLK_p'
+Slack : 4.997
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_clk'
+Slack : 6.374
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_avl_phy_clk'
+Slack : 7.482
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B3B'
+Slack : 8.779
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.808
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B6A'
+Slack : 9.094
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'sv_reconfig_pma_testbus_clk_0'
+Slack : 9.281
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B4A'
+Slack : 9.924
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 15.343
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CAMERA1_MIPI_PIXEL_CLK'
+Slack : 18.269
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|mem_if_ddr3_emif_0|pll0|pll_config_clk'
+Slack : 22.016
+TNS   : 0.000
+
+------------------------------------------------------------
+Info: see the "DDR report" for DDR timing results
+------------------------------------------------------------
+------------------------------------------------------------

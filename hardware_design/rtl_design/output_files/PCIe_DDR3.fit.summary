@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Feb 03 15:13:01 2022
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : PCIe_DDR3
+Top-level Entity Name : PCIe_DDR3
+Family : Cyclone V
+Device : 5CGTFD9D5F27C7
+Timing Models : Final
+Logic utilization (in ALMs) : 21,737 / 113,560 ( 19 % )
+Total registers : 37759
+Total pins : 217 / 378 ( 57 % )
+Total virtual pins : 0
+Total block memory bits : 4,106,380 / 12,492,800 ( 33 % )
+Total RAM Blocks : 533 / 1,220 ( 44 % )
+Total DSP Blocks : 7 / 342 ( 2 % )
+Total HSSI RX PCSs : 4 / 9 ( 44 % )
+Total HSSI PMA RX Deserializers : 4 / 9 ( 44 % )
+Total HSSI TX PCSs : 4 / 9 ( 44 % )
+Total HSSI PMA TX Serializers : 4 / 9 ( 44 % )
+Total PLLs : 7 / 17 ( 41 % )
+Total DLLs : 1 / 4 ( 25 % )
