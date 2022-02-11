@@ -1,0 +1,34 @@
+/*
+ * ddr3_circular_buf.h
+ *
+ *  Created on: Feb 9, 2022
+ *      Author: quoch
+ */
+
+#ifndef DDR3_CIRCULAR_BUF_H_
+#define DDR3_CIRCULAR_BUF_H_
+
+#include "common_includes.h"
+
+#define DDR3_MAX_LENGTH		256*1024*1024	// 256MB
+
+
+typedef struct{
+	alt_u32 head;
+	alt_u32 tail;
+	const alt_u32 maxlen;
+}Circular_buf_st;
+
+#define DDR3_CIRC_BBUF_DEF(x,y)           	\
+		Circular_buf_st x = {        		\
+			.head = 0,                    	\
+			.tail = 0,                    	\
+			.maxlen = y                   	\
+    	}
+
+int circ_bbuf_push (Circular_buf_st *ddr, alt_u32 data);
+int circ_bbuf_pop (Circular_buf_st *ddr, alt_u32 *data);
+int circ_bbuf_is_full (Circular_buf_st *ddr);
+int circ_bbuf_is_empty (Circular_buf_st *ddr);
+
+#endif /* DDR3_CIRCULAR_BUF_H_ */

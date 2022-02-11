@@ -1,0 +1,1550 @@
+14:36:04 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:45:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:45:86: error: 'alt_avalon_key_edge_detect_irq' undeclared (first use in this function)
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+                                                                                      ^
+main.c:45:86: note: each undeclared identifier is reported only once for each function it appears in
+main.c:49:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:50:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+In file included from main.h:15:0,
+                 from main.c:8:
+main.c: At top level:
+imx421_mode_tbls.h:328:12: warning: 'imx421_write_table' used but never defined
+ static int imx421_write_table(int slavenum,const imx421_reg table[]);
+            ^
+main.c:174:13: warning: 'alt_avalon_key_edge_detect_irq' defined but not used [-Wunused-function]
+ static void alt_avalon_key_edge_detect_irq (void* base)
+             ^
+make: *** [obj/default/main.o] Error 1
+14:36:42 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:47:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:51:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:52:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+In file included from main.h:15:0,
+                 from main.c:8:
+main.c: At top level:
+imx421_mode_tbls.h:328:12: warning: 'imx421_write_table' used but never defined
+ static int imx421_write_table(int slavenum,const imx421_reg table[]);
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:27: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:32: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:41: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:51: undefined reference to `IOWR_ALTERA_AVALON_PIO_EDGE_CAP'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:52: undefined reference to `IOWR_ALTERA_AVALON_PIO_IRQ_MASK'
+obj/default/main.o: In function `SPI_task':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:136: undefined reference to `imx421_write_table'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:139: undefined reference to `imx421_write_table'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:142: undefined reference to `imx421_write_table'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:145: undefined reference to `imx421_write_table'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:148: undefined reference to `imx421_write_table'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:36:47 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:38:37 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:45:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+In file included from imx421.c:9:0:
+imx421.c: At top level:
+imx421_mode_tbls.h:318:26: warning: 'mode_table' defined but not used [-Wunused-variable]
+ static const imx421_reg *mode_table[] = {
+                          ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:47:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:51:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:52:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:27: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:32: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:41: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:51: undefined reference to `IOWR_ALTERA_AVALON_PIO_EDGE_CAP'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:52: undefined reference to `IOWR_ALTERA_AVALON_PIO_IRQ_MASK'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:38:42 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:40:38 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:47:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:51:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:52:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:27: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:32: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:41: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:51: undefined reference to `IOWR_ALTERA_AVALON_PIO_EDGE_CAP'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:52: undefined reference to `IOWR_ALTERA_AVALON_PIO_IRQ_MASK'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:40:43 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:41:50 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:58:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:62:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:63:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:38: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:43: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:52: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:62: undefined reference to `IOWR_ALTERA_AVALON_PIO_EDGE_CAP'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:63: undefined reference to `IOWR_ALTERA_AVALON_PIO_IRQ_MASK'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:41:55 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:42:25 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:60:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:64:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:65:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:27: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:32: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:54: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:64: undefined reference to `IOWR_ALTERA_AVALON_PIO_EDGE_CAP'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:65: undefined reference to `IOWR_ALTERA_AVALON_PIO_IRQ_MASK'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:42:30 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:42:42 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:60:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:64:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:65:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+main.c: In function 'SPI_task':
+main.c:148:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:148:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:149:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:149:36: error: 'mode_table' undeclared (first use in this function)
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+                                    ^
+main.c:151:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:154:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:157:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:160:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:42:47 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:43:24 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:61:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:65:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:66:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:28: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:33: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:55: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:65: undefined reference to `IOWR_ALTERA_AVALON_PIO_EDGE_CAP'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:66: undefined reference to `IOWR_ALTERA_AVALON_PIO_IRQ_MASK'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:43:29 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:44:28 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:61:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c:65:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_EDGE_CAP' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(NIOSII_CPU_KEY_BASE, KEY_EDGE_CAPT);
+  ^
+main.c:66:2: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_IRQ_MASK' [-Wimplicit-function-declaration]
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(NIOSII_CPU_KEY_BASE, KEY_INT_MSK);
+  ^
+main.c: In function 'SPI_task':
+main.c:149:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:149:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:150:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:150:36: error: 'mode_table' undeclared (first use in this function)
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+                                    ^
+main.c:152:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:155:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:158:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:161:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:44:33 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:46:14 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main_init':
+main.c:61:2: warning: implicit declaration of function 'alt_ic_isr_register' [-Wimplicit-function-declaration]
+  alt_ic_isr_register(NIOSII_CPU_KEY_IRQ_INTERRUPT_CONTROLLER_ID, NIOSII_CPU_KEY_IRQ, alt_avalon_key_edge_detect_irq,
+  ^
+main.c: In function 'SPI_task':
+main.c:149:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:149:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:150:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:150:36: error: 'mode_table' undeclared (first use in this function)
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+                                    ^
+main.c:152:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:155:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:158:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:161:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:46:19 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:47:48 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:62:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+main.c: In function 'SPI_task':
+main.c:149:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:149:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:150:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:150:36: error: 'mode_table' undeclared (first use in this function)
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+                                    ^
+main.c:152:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:155:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:158:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:161:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:47:53 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:51:13 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:41:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+In file included from imx421.h:16:0,
+                 from imx421.c:8:
+imx421.c: At top level:
+imx421_mode_tbls.h:318:26: warning: 'mode_table' defined but not used [-Wunused-variable]
+ static const imx421_reg *mode_table[] = {
+                          ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:62:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:28: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:33: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:55: undefined reference to `sys_tick_flag'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:51:18 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:53:55 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:41:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+In file included from imx421.c:8:0:
+imx421.c: At top level:
+imx421.h:26:26: warning: 'mode_table' defined but not used [-Wunused-variable]
+ static const imx421_reg *mode_table[] = {
+                          ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:62:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:28: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:33: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:55: undefined reference to `sys_tick_flag'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+14:54:01 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:55:45 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:63:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+main.c: In function 'SPI_task':
+main.c:150:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:150:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:151:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:151:36: error: 'mode_table' undeclared (first use in this function)
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+                                    ^
+main.c:153:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:156:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:159:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:162:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:55:50 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:57:36 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from main.c:8:0:
+main.h:59:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+main.h:61:1: error: multiple storage classes in declaration specifiers
+ extern static const imx421_reg *mode_table[];
+ ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:63:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+main.c: In function 'SPI_task':
+main.c:150:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:150:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:151:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:153:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:156:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:159:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:162:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:57:41 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+14:58:18 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:41:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from main.c:8:0:
+main.h:59:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:63:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+main.c: In function 'SPI_task':
+main.c:150:13: error: 'IMX421_MODE_3712x1548' undeclared (first use in this function)
+     case (1+IMX421_MODE_3712x1548):
+             ^
+main.c:150:13: note: each undeclared identifier is reported only once for each function it appears in
+main.c:151:12: warning: implicit declaration of function 'imx421_write_table' [-Wimplicit-function-declaration]
+      err = imx421_write_table(SS0, mode_table[IMX421_MODE_3712x1548]);
+            ^
+main.c:153:13: error: 'IMX421_MODE_COMMON' undeclared (first use in this function)
+     case (1+IMX421_MODE_COMMON):
+             ^
+main.c:156:13: error: 'IMX421_MODE_START_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_START_STREAM):
+             ^
+main.c:159:13: error: 'IMX421_MODE_STOP_STREAM' undeclared (first use in this function)
+     case (1+IMX421_MODE_STOP_STREAM):
+             ^
+main.c:162:13: error: 'IMX421_MODE_TEST_PATTERN' undeclared (first use in this function)
+     case (1+IMX421_MODE_TEST_PATTERN):
+             ^
+make: *** [obj/default/main.o] Error 1
+14:58:23 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+15:09:13 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:65:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+obj/default/main.o: In function `main':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:30: undefined reference to `sys_tick_flag'
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:36: undefined reference to `sys_tick_flag'
+obj/default/main.o: In function `main_init':
+C:\Users\Kingdel\Documents\FPGA_workspace\DE10_Nano\C5_NIOSII_SPI_SLVSEC\software\c5_niosii_spi_slvsec/main.c:58: undefined reference to `sys_tick_flag'
+collect2.exe: error: ld returned 1 exit status
+make: *** [c5_niosii_spi_slvsec.elf] Error 1
+15:09:19 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+15:14:54 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+Compiling altera_avalon_timer_sc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O2 -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_timer_sc.o drivers/src/altera_avalon_timer_sc.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_avalon_timer_sc.o obj/drivers/src/altera_avalon_timer_ts.o obj/drivers/src/altera_avalon_timer_vars.o
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:65:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 10 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+15:15:01 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+15:55:55 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+Compiling altera_avalon_timer_sc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O2 -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_timer_sc.o drivers/src/altera_avalon_timer_sc.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_avalon_timer_sc.o obj/drivers/src/altera_avalon_timer_ts.o obj/drivers/src/altera_avalon_timer_vars.o
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:83:4: warning: statement with no effect [-Wunused-value]
+    SPI_task
+    ^
+main.c:85:4: error: expected ';' before 'os_task_100ms_flag'
+    os_task_100ms_flag = OFF;
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:112:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+make: *** [obj/default/main.o] Error 1
+15:56:00 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+15:56:19 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:112:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 10 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+15:56:26 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:02:49 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:04:07 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:04:48 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:06:59 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:112:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 10 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+16:07:06 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:08:06 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:113:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 10 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+16:08:13 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:08:32 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:08:37 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:17:27 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 10 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+16:17:35 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:20:28 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:20:34 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:24:11 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            115 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+16:24:17 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:24:45 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:24:50 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:26:36 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            115 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+16:26:43 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:27:19 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:27:24 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:27:58 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:28:03 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:28:12 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:28:17 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:36:08 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+imx421.c:63:7: error: 'err' undeclared (first use in this function)
+       err);
+       ^
+imx421.c:63:7: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/imx421.o] Error 1
+16:36:13 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:36:46 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+imx421.c:63:7: error: 'err' undeclared (first use in this function)
+       err);
+       ^
+imx421.c:63:7: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/imx421.o] Error 1
+16:36:51 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+imx421.c:63:7: error: 'err' undeclared (first use in this function)
+       err);
+       ^
+imx421.c:63:7: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/imx421.o] Error 1
+16:37:18 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+16:37:25 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+16:38:02 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:38:07 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:42:22 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+16:42:27 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:01:58 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:02:04 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:17:30 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+17:17:37 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:17:57 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:18:02 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:18:12 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:18:17 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:31:56 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+17:32:03 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:32:43 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:32:48 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:44:16 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:55:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+17:44:22 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:45:01 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling imx421.c to obj/default/imx421.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/imx421.o imx421.c
+imx421.c: In function 'imx421_write_table':
+imx421.c:56:4: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+    usleep(table[cnt].val*1000);
+    ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+17:45:08 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:45:24 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:45:29 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:45:56 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+17:46:02 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:46:47 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+17:46:52 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+18:27:32 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+Compiling altera_avalon_timer_sc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O2 -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_timer_sc.o drivers/src/altera_avalon_timer_sc.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_avalon_timer_sc.o obj/drivers/src/altera_avalon_timer_ts.o obj/drivers/src/altera_avalon_timer_vars.o
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../c5_niosii_spi_slvsec_bsp//HAL/inc -I../c5_niosii_spi_slvsec_bsp/ -I../c5_niosii_spi_slvsec_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:52:0,
+                 from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34,
+                 from main.h:16,
+                 from main.c:8:
+main.c: In function 'main_init':
+../c5_niosii_spi_slvsec_bsp/system.h:224:29: warning: passing argument 4 of 'alt_ic_isr_register' makes pointer from integer without a cast [-Wint-conversion]
+ #define NIOSII_CPU_KEY_BASE 0x41020
+                             ^
+main.c:120:4: note: in expansion of macro 'NIOSII_CPU_KEY_BASE'
+    NIOSII_CPU_KEY_BASE, NULL);
+    ^
+In file included from ../c5_niosii_spi_slvsec_bsp//HAL/inc/priv/alt_iic_isr_register.h:34:0,
+                 from main.h:16,
+                 from main.c:8:
+../c5_niosii_spi_slvsec_bsp//HAL/inc/sys/alt_irq.h:195:12: note: expected 'void *' but argument is of type 'int'
+ extern int alt_ic_isr_register(alt_u32 ic_id,
+            ^
+Info: Linking c5_niosii_spi_slvsec.elf
+nios2-elf-g++  -T'../c5_niosii_spi_slvsec_bsp//linker.x' -msys-crt0='../c5_niosii_spi_slvsec_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../c5_niosii_spi_slvsec_bsp/  -msmallc  -Wl,-Map=c5_niosii_spi_slvsec.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o c5_niosii_spi_slvsec.elf obj/default/imx421.o obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert c5_niosii_spi_slvsec.elf --thread_model hal --cpu_name niosii_cpu_nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x41050 --timestamp 1568412196 --stderr_dev niosii_cpu_jtag_uart_0 --stdin_dev niosii_cpu_jtag_uart_0 --stdout_dev niosii_cpu_jtag_uart_0 --sopc_system_name c5_niosii_spi_slvsec --quartus_project_dir "C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC" --jdi ../..//output_files/C5_NIOSII_SPI_SLVSEC.jdi --sopcinfo C:/Users/Kingdel/Documents/FPGA_workspace/DE10_Nano/C5_NIOSII_SPI_SLVSEC/software/c5_niosii_spi_slvsec_bsp/../../c5_niosii_spi_slvsec.sopcinfo
+Info: (c5_niosii_spi_slvsec.elf) 11 KBytes program size (code + initialized data).
+Info:                            116 KBytes free for stack + heap.
+Info: Creating c5_niosii_spi_slvsec.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source c5_niosii_spi_slvsec.elf >c5_niosii_spi_slvsec.objdump
+[c5_niosii_spi_slvsec build complete]
+18:27:40 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+18:28:31 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+[BSP build complete]
+[c5_niosii_spi_slvsec build complete]
+18:28:36 **** Incremental Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+[BSP build complete]
+17:04:23 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+The system cannot find the path specified.
+The system cannot find the path specified.
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+'cygpath' is not recognized as an internal or external command,
+operable program or batch file.
+process_begin: CreateProcess(NULL, pwd, ...) failed.
+Makefile not up to date.
+../../c5_niosii_spi_slvsec.sopcinfo has been modified since the BSP was generated.
+ECHO is off.
+Generate the BSP to update the Makefile, and then build again.
+ECHO is off.
+To generate from Eclipse:
+" 1. Right-click the BSP project."
+" 2. In the Nios II Menu, click Generate BSP."
+ECHO is off.
+To generate from the command line:
+" nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>"
+ECHO is off.
+make[1]: *** [public.mk] Error 1
+make: *** [../c5_niosii_spi_slvsec_bsp/-recurs-make-lib] Error 2
+17:04:46 **** Build of configuration Nios II for project c5_niosii_spi_slvsec_bsp ****
+make all 
+'cygpath' is not recognized as an internal or external command,
+operable program or batch file.
+process_begin: CreateProcess(NULL, pwd, ...) failed.
+Makefile not up to date.
+../../c5_niosii_spi_slvsec.sopcinfo has been modified since the BSP was generated.
+ECHO is off.
+Generate the BSP to update the Makefile, and then build again.
+ECHO is off.
+To generate from Eclipse:
+" 1. Right-click the BSP project."
+" 2. In the Nios II Menu, click Generate BSP."
+ECHO is off.
+To generate from the command line:
+" nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>"
+ECHO is off.
+make: *** [public.mk] Error 1

@@ -2,29 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="dma_ocm_buf_push" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="50*1000*1000"/>
-			<item value="0x0100"/>
-			<item value="MipiCameraReg"/>
-			<item value="oc_i2c_uninit"/>
-			<item value="oc_i2c_init_ex"/>
-			<item value="pwdn"/>
-			<item value="TERASIC_AUTO_FOCUS_0_BASE"/>
-			<item value="bShowMessage"/>
+			<item value="dma_ocm_buf_push"/>
+			<item value="dmaocmreg"/>
+			<item value="ipackage_size"/>
+			<item value="ocm_writting_fsm"/>
+			<item value="fifo_data"/>
+			<item value="ipakcage_size"/>
+			<item value="frame"/>
+			<item value="DDR3_EMIF"/>
 		</list>
 		<list key="replacehistory">
+			<item value="ipackage_size"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="305" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="1405" key="DIALOG_X_ORIGIN"/>
-		<item value="192" key="DIALOG_Y_ORIGIN"/>
+		<item value="545" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-30|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="737" key="DIALOG_HEIGHT"/>
+		<item value="2279" key="DIALOG_X_ORIGIN"/>
+		<item value="333" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

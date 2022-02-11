@@ -45,7 +45,7 @@
 //   PIPELINE_ARB:        0
 //   PKT_TRANS_LOCK:      71 (arbitration locking enabled)
 //   ST_DATA_W:           118
-//   ST_CHANNEL_W:        18
+//   ST_CHANNEL_W:        19
 // ------------------------------------------
 
 module top_mm_interconnect_1_rsp_mux_001
@@ -55,14 +55,14 @@ module top_mm_interconnect_1_rsp_mux_001
     // ----------------------
     input                       sink0_valid,
     input [118-1   : 0]  sink0_data,
-    input [18-1: 0]  sink0_channel,
+    input [19-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
 
     input                       sink1_valid,
     input [118-1   : 0]  sink1_data,
-    input [18-1: 0]  sink1_channel,
+    input [19-1: 0]  sink1_channel,
     input                       sink1_startofpacket,
     input                       sink1_endofpacket,
     output                      sink1_ready,
@@ -73,7 +73,7 @@ module top_mm_interconnect_1_rsp_mux_001
     // ----------------------
     output                      src_valid,
     output [118-1    : 0] src_data,
-    output [18-1 : 0] src_channel,
+    output [19-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -84,12 +84,12 @@ module top_mm_interconnect_1_rsp_mux_001
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 118 + 18 + 2;
+    localparam PAYLOAD_W        = 118 + 19 + 2;
     localparam NUM_INPUTS       = 2;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
     localparam ST_DATA_W        = 118;
-    localparam ST_CHANNEL_W     = 18;
+    localparam ST_CHANNEL_W     = 19;
     localparam PKT_TRANS_LOCK   = 71;
 
     // ------------------------------------------

@@ -1,0 +1,26 @@
+17:04:23 **** Build of configuration Nios II for project c5_niosii_spi_slvsec ****
+make all 
+The system cannot find the path specified.
+The system cannot find the path specified.
+Info: Building ../c5_niosii_spi_slvsec_bsp/
+make --no-print-directory -C ../c5_niosii_spi_slvsec_bsp/
+'cygpath' is not recognized as an internal or external command,
+operable program or batch file.
+process_begin: CreateProcess(NULL, pwd, ...) failed.
+Makefile not up to date.
+../../c5_niosii_spi_slvsec.sopcinfo has been modified since the BSP was generated.
+ECHO is off.
+Generate the BSP to update the Makefile, and then build again.
+ECHO is off.
+To generate from Eclipse:
+" 1. Right-click the BSP project."
+" 2. In the Nios II Menu, click Generate BSP."
+ECHO is off.
+To generate from the command line:
+" nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>"
+ECHO is off.
+make[1]: *** [public.mk] Error 1
+make: *** [../c5_niosii_spi_slvsec_bsp/-recurs-make-lib] Error 2
+
+17:04:46 Build Finished (took 23s.474ms)
+

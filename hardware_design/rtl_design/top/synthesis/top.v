@@ -146,7 +146,7 @@ module top (
 	wire          alt_vip_cl_vfb_0_dout_startofpacket;                               // alt_vip_cl_vfb_0:dout_startofpacket -> TERASIC_AUTO_FOCUS_0:sink_sop
 	wire          alt_vip_cl_vfb_0_dout_endofpacket;                                 // alt_vip_cl_vfb_0:dout_endofpacket -> TERASIC_AUTO_FOCUS_0:sink_eop
 	wire          pcie_256_dma_coreclkout_clk;                                       // pcie_256_dma:coreclkout -> [csr_regmap:clk2, mm_interconnect_0:pcie_256_dma_coreclkout_clk, mm_interconnect_2:pcie_256_dma_coreclkout_clk, mm_interconnect_4:pcie_256_dma_coreclkout_clk, mm_interconnect_5:pcie_256_dma_coreclkout_clk, ocm_256k_dma:clk2, pcie_reconfig_driver_0:pld_clk, pcie_reconfig_driver_0:reconfig_xcvr_clk, rst_controller_002:clk]
-	wire          pll_0_outclk0_clk;                                                 // pll_0:outclk_0 -> [TERASIC_AUTO_FOCUS_0:clk, TERASIC_CAMERA_0:clk, alt_vip_cl_vfb_0:main_clock, avalon_st_adapter:in_clk_0_clk, avalon_st_adapter_001:in_clk_0_clk, csr_regmap:clk, ddr3_status:clk, fifo_0:wrclock, i2c_opencores_camera:wb_clk_i, i2c_opencores_mipi:wb_clk_i, irq_mapper:clk, jtag_uart_0:clk, mem_if_ddr3_emif_0:mp_cmd_clk_0_clk, mem_if_ddr3_emif_0:mp_rfifo_clk_0_clk, mem_if_ddr3_emif_0:mp_rfifo_clk_1_clk, mem_if_ddr3_emif_0:mp_wfifo_clk_0_clk, mem_if_ddr3_emif_0:mp_wfifo_clk_1_clk, mipi_pwdn_n:clk, mipi_reset_n:clk, mm_interconnect_1:pll_0_outclk0_clk, mm_interconnect_3:pll_0_outclk0_clk, nios2_gen2_0:clk, nios_ram:clk, ocm_256k_dma:clk, pio_button:clk, pio_led:clk, rst_controller:clk, sdram_vfb:clk, sysid_qsys_0:clock, timer_0:clk]
+	wire          pll_0_outclk0_clk;                                                 // pll_0:outclk_0 -> [TERASIC_AUTO_FOCUS_0:clk, TERASIC_CAMERA_0:clk, alt_vip_cl_vfb_0:main_clock, avalon_st_adapter:in_clk_0_clk, avalon_st_adapter_001:in_clk_0_clk, csr_regmap:clk, ddr3_status:clk, fifo_0:wrclock, i2c_opencores_camera:wb_clk_i, i2c_opencores_mipi:wb_clk_i, irq_mapper:clk, jtag_uart_0:clk, mem_if_ddr3_emif_0:mp_cmd_clk_0_clk, mem_if_ddr3_emif_0:mp_rfifo_clk_0_clk, mem_if_ddr3_emif_0:mp_rfifo_clk_1_clk, mem_if_ddr3_emif_0:mp_wfifo_clk_0_clk, mem_if_ddr3_emif_0:mp_wfifo_clk_1_clk, mipi_pwdn_n:clk, mipi_reset_n:clk, mm_interconnect_1:pll_0_outclk0_clk, mm_interconnect_3:pll_0_outclk0_clk, nios2_gen2_0:clk, nios_ram:clk, ocm_256k_dma:clk, pio_button:clk, pio_led:clk, rst_controller:clk, sdram_vfb:clk, sysid_qsys_0:clock, timer_0:clk, timer_1:clk]
 	wire    [1:0] pcie_256_dma_hip_currentspeed_currentspeed;                        // pcie_256_dma:currentspeed -> pcie_reconfig_driver_0:currentspeed
 	wire  [229:0] pcie_256_dma_reconfig_from_xcvr_reconfig_from_xcvr;                // pcie_256_dma:reconfig_from_xcvr -> alt_xcvr_reconfig_0:reconfig_from_xcvr
 	wire  [349:0] alt_xcvr_reconfig_0_reconfig_to_xcvr_reconfig_to_xcvr;             // alt_xcvr_reconfig_0:reconfig_to_xcvr -> pcie_256_dma:reconfig_to_xcvr
@@ -281,6 +281,11 @@ module top (
 	wire          mm_interconnect_1_csr_regmap_s1_clken;                             // mm_interconnect_1:csr_regmap_s1_clken -> csr_regmap:clken
 	wire   [31:0] mm_interconnect_1_ddr3_status_s1_readdata;                         // ddr3_status:readdata -> mm_interconnect_1:ddr3_status_s1_readdata
 	wire    [1:0] mm_interconnect_1_ddr3_status_s1_address;                          // mm_interconnect_1:ddr3_status_s1_address -> ddr3_status:address
+	wire          mm_interconnect_1_timer_1_s1_chipselect;                           // mm_interconnect_1:timer_1_s1_chipselect -> timer_1:chipselect
+	wire   [15:0] mm_interconnect_1_timer_1_s1_readdata;                             // timer_1:readdata -> mm_interconnect_1:timer_1_s1_readdata
+	wire    [2:0] mm_interconnect_1_timer_1_s1_address;                              // mm_interconnect_1:timer_1_s1_address -> timer_1:address
+	wire          mm_interconnect_1_timer_1_s1_write;                                // mm_interconnect_1:timer_1_s1_write -> timer_1:write_n
+	wire   [15:0] mm_interconnect_1_timer_1_s1_writedata;                            // mm_interconnect_1:timer_1_s1_writedata -> timer_1:writedata
 	wire          pcie_256_dma_dma_rd_master_waitrequest;                            // mm_interconnect_2:pcie_256_dma_dma_rd_master_waitrequest -> pcie_256_dma:RdDmaWaitRequest_i
 	wire   [63:0] pcie_256_dma_dma_rd_master_address;                                // pcie_256_dma:RdDmaAddress_o -> mm_interconnect_2:pcie_256_dma_dma_rd_master_address
 	wire   [15:0] pcie_256_dma_dma_rd_master_byteenable;                             // pcie_256_dma:RdDmaWriteEnable_o -> mm_interconnect_2:pcie_256_dma_dma_rd_master_byteenable
@@ -376,6 +381,7 @@ module top (
 	wire          irq_mapper_receiver3_irq;                                          // jtag_uart_0:av_irq -> irq_mapper:receiver3_irq
 	wire          irq_mapper_receiver4_irq;                                          // pio_button:irq -> irq_mapper:receiver4_irq
 	wire          irq_mapper_receiver5_irq;                                          // timer_0:irq -> irq_mapper:receiver5_irq
+	wire          irq_mapper_receiver6_irq;                                          // timer_1:irq -> irq_mapper:receiver6_irq
 	wire   [31:0] nios2_gen2_0_irq_irq;                                              // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire          terasic_camera_0_avalon_streaming_source_valid;                    // TERASIC_CAMERA_0:st_valid -> avalon_st_adapter:in_0_valid
 	wire   [23:0] terasic_camera_0_avalon_streaming_source_data;                     // TERASIC_CAMERA_0:st_data -> avalon_st_adapter:in_0_data
@@ -400,7 +406,7 @@ module top (
 	wire          avalon_st_adapter_001_out_0_endofpacket;                           // avalon_st_adapter_001:out_0_endofpacket -> fifo_0:avalonst_sink_endofpacket
 	wire    [7:0] avalon_st_adapter_001_out_0_error;                                 // avalon_st_adapter_001:out_0_error -> fifo_0:avalonst_sink_error
 	wire    [1:0] avalon_st_adapter_001_out_0_empty;                                 // avalon_st_adapter_001:out_0_empty -> fifo_0:avalonst_sink_empty
-	wire          rst_controller_reset_out_reset;                                    // rst_controller:reset_out -> [TERASIC_AUTO_FOCUS_0:reset_n, TERASIC_CAMERA_0:reset_n, alt_vip_cl_vfb_0:main_reset, avalon_st_adapter:in_rst_0_reset, avalon_st_adapter_001:in_rst_0_reset, csr_regmap:reset, ddr3_status:reset_n, fifo_0:reset_n, i2c_opencores_camera:wb_rst_i, i2c_opencores_mipi:wb_rst_i, irq_mapper:reset, jtag_uart_0:rst_n, mipi_pwdn_n:reset_n, mipi_reset_n:reset_n, mm_interconnect_1:mem_if_ddr3_emif_0_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_1:nios2_gen2_0_reset_reset_bridge_in_reset_reset, mm_interconnect_3:alt_vip_cl_vfb_0_main_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, nios_ram:reset, ocm_256k_dma:reset, pio_button:reset_n, pio_led:reset_n, rst_translator:in_reset, sdram_vfb:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n]
+	wire          rst_controller_reset_out_reset;                                    // rst_controller:reset_out -> [TERASIC_AUTO_FOCUS_0:reset_n, TERASIC_CAMERA_0:reset_n, alt_vip_cl_vfb_0:main_reset, avalon_st_adapter:in_rst_0_reset, avalon_st_adapter_001:in_rst_0_reset, csr_regmap:reset, ddr3_status:reset_n, fifo_0:reset_n, i2c_opencores_camera:wb_rst_i, i2c_opencores_mipi:wb_rst_i, irq_mapper:reset, jtag_uart_0:rst_n, mipi_pwdn_n:reset_n, mipi_reset_n:reset_n, mm_interconnect_1:mem_if_ddr3_emif_0_mp_cmd_reset_n_0_reset_bridge_in_reset_reset, mm_interconnect_1:nios2_gen2_0_reset_reset_bridge_in_reset_reset, mm_interconnect_3:alt_vip_cl_vfb_0_main_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, nios_ram:reset, ocm_256k_dma:reset, pio_button:reset_n, pio_led:reset_n, rst_translator:in_reset, sdram_vfb:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n, timer_1:reset_n]
 	wire          rst_controller_reset_out_reset_req;                                // rst_controller:reset_req -> [csr_regmap:reset_req, nios2_gen2_0:reset_req, nios_ram:reset_req, ocm_256k_dma:reset_req, rst_translator:reset_req_in]
 	wire          rst_controller_001_reset_out_reset;                                // rst_controller_001:reset_out -> [alt_xcvr_reconfig_0:mgmt_rst_reset, mm_interconnect_5:alt_xcvr_reconfig_0_mgmt_rst_reset_reset_bridge_in_reset_reset]
 	wire          rst_controller_002_reset_out_reset;                                // rst_controller_002:reset_out -> [csr_regmap:reset2, mm_interconnect_0:csr_regmap_reset2_reset_bridge_in_reset_reset, mm_interconnect_2:ocm_256k_dma_reset2_reset_bridge_in_reset_reset, mm_interconnect_4:pcie_256_dma_rd_dcm_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_5:pcie_reconfig_driver_0_reconfig_xcvr_rst_reset_bridge_in_reset_reset, ocm_256k_dma:reset2, pcie_reconfig_driver_0:reconfig_xcvr_rst, rst_translator_001:in_reset]
@@ -1462,6 +1468,17 @@ module top (
 		.irq        (irq_mapper_receiver5_irq)                 //   irq.irq
 	);
 
+	top_timer_1 timer_1 (
+		.clk        (pll_0_outclk0_clk),                       //   clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         // reset.reset_n
+		.address    (mm_interconnect_1_timer_1_s1_address),    //    s1.address
+		.writedata  (mm_interconnect_1_timer_1_s1_writedata),  //      .writedata
+		.readdata   (mm_interconnect_1_timer_1_s1_readdata),   //      .readdata
+		.chipselect (mm_interconnect_1_timer_1_s1_chipselect), //      .chipselect
+		.write_n    (~mm_interconnect_1_timer_1_s1_write),     //      .write_n
+		.irq        (irq_mapper_receiver6_irq)                 //   irq.irq
+	);
+
 	top_mm_interconnect_0 mm_interconnect_0 (
 		.pcie_256_dma_coreclkout_clk                   (pcie_256_dma_coreclkout_clk),                //                 pcie_256_dma_coreclkout.clk
 		.csr_regmap_reset2_reset_bridge_in_reset_reset (rst_controller_002_reset_out_reset),         // csr_regmap_reset2_reset_bridge_in_reset.reset
@@ -1601,7 +1618,12 @@ module top (
 		.timer_0_s1_write                                                (mm_interconnect_1_timer_0_s1_write),                                 //                                                          .write
 		.timer_0_s1_readdata                                             (mm_interconnect_1_timer_0_s1_readdata),                              //                                                          .readdata
 		.timer_0_s1_writedata                                            (mm_interconnect_1_timer_0_s1_writedata),                             //                                                          .writedata
-		.timer_0_s1_chipselect                                           (mm_interconnect_1_timer_0_s1_chipselect)                             //                                                          .chipselect
+		.timer_0_s1_chipselect                                           (mm_interconnect_1_timer_0_s1_chipselect),                            //                                                          .chipselect
+		.timer_1_s1_address                                              (mm_interconnect_1_timer_1_s1_address),                               //                                                timer_1_s1.address
+		.timer_1_s1_write                                                (mm_interconnect_1_timer_1_s1_write),                                 //                                                          .write
+		.timer_1_s1_readdata                                             (mm_interconnect_1_timer_1_s1_readdata),                              //                                                          .readdata
+		.timer_1_s1_writedata                                            (mm_interconnect_1_timer_1_s1_writedata),                             //                                                          .writedata
+		.timer_1_s1_chipselect                                           (mm_interconnect_1_timer_1_s1_chipselect)                             //                                                          .chipselect
 	);
 
 	top_mm_interconnect_2 mm_interconnect_2 (
@@ -1724,6 +1746,7 @@ module top (
 		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
 		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
 		.receiver5_irq (irq_mapper_receiver5_irq),       // receiver5.irq
+		.receiver6_irq (irq_mapper_receiver6_irq),       // receiver6.irq
 		.sender_irq    (nios2_gen2_0_irq_irq)            //    sender.irq
 	);
 

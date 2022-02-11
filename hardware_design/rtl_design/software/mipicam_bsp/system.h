@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'top'
  * SOPC Builder design path: ../../top.sopcinfo
  *
- * Generated: Thu Feb 03 16:11:31 PST 2022
+ * Generated: Tue Feb 08 14:55:59 PST 2022
  */
 
 /*
@@ -169,19 +169,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x400810f0
+#define ALT_STDERR_BASE 0x40081110
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x400810f0
+#define ALT_STDIN_BASE 0x40081110
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x400810f0
+#define ALT_STDOUT_BASE 0x40081110
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -195,7 +195,7 @@
  */
 
 #define ALT_MODULE_CLASS_TERASIC_AUTO_FOCUS_0 TERASIC_AUTO_FOCUS
-#define TERASIC_AUTO_FOCUS_0_BASE 0x40081040
+#define TERASIC_AUTO_FOCUS_0_BASE 0x40081060
 #define TERASIC_AUTO_FOCUS_0_IRQ -1
 #define TERASIC_AUTO_FOCUS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define TERASIC_AUTO_FOCUS_0_NAME "/dev/TERASIC_AUTO_FOCUS_0"
@@ -211,7 +211,7 @@
 #define ALT_MODULE_CLASS_csr_regmap altera_avalon_onchip_memory2
 #define CSR_REGMAP_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
 #define CSR_REGMAP_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define CSR_REGMAP_BASE 0x40081000
+#define CSR_REGMAP_BASE 0x40081020
 #define CSR_REGMAP_CONTENTS_INFO ""
 #define CSR_REGMAP_DUAL_PORT 1
 #define CSR_REGMAP_GUI_RAM_BLOCK_TYPE "AUTO"
@@ -238,7 +238,7 @@
  */
 
 #define ALT_MODULE_CLASS_ddr3_status altera_avalon_pio
-#define DDR3_STATUS_BASE 0x40081080
+#define DDR3_STATUS_BASE 0x400810a0
 #define DDR3_STATUS_BIT_CLEARING_EDGE_REGISTER 0
 #define DDR3_STATUS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DDR3_STATUS_CAPTURE 0
@@ -267,7 +267,7 @@
 #define ALT_MODULE_CLASS_fifo_0_in_csr altera_avalon_fifo
 #define FIFO_0_IN_CSR_AVALONMM_AVALONMM_DATA_WIDTH 32
 #define FIFO_0_IN_CSR_AVALONMM_AVALONST_DATA_WIDTH 32
-#define FIFO_0_IN_CSR_BASE 0x40081060
+#define FIFO_0_IN_CSR_BASE 0x40081080
 #define FIFO_0_IN_CSR_BITS_PER_SYMBOL 8
 #define FIFO_0_IN_CSR_CHANNEL_WIDTH 8
 #define FIFO_0_IN_CSR_ERROR_WIDTH 8
@@ -299,7 +299,7 @@
 #define ALT_MODULE_CLASS_fifo_0_out altera_avalon_fifo
 #define FIFO_0_OUT_AVALONMM_AVALONMM_DATA_WIDTH 32
 #define FIFO_0_OUT_AVALONMM_AVALONST_DATA_WIDTH 32
-#define FIFO_0_OUT_BASE 0x400810d0
+#define FIFO_0_OUT_BASE 0x400810f0
 #define FIFO_0_OUT_BITS_PER_SYMBOL 8
 #define FIFO_0_OUT_CHANNEL_WIDTH 8
 #define FIFO_0_OUT_ERROR_WIDTH 8
@@ -340,7 +340,7 @@
  */
 
 #define ALT_MODULE_CLASS_i2c_opencores_camera i2c_opencores
-#define I2C_OPENCORES_CAMERA_BASE 0x400810e8
+#define I2C_OPENCORES_CAMERA_BASE 0x40081108
 #define I2C_OPENCORES_CAMERA_IRQ -1
 #define I2C_OPENCORES_CAMERA_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define I2C_OPENCORES_CAMERA_NAME "/dev/i2c_opencores_camera"
@@ -354,7 +354,7 @@
  */
 
 #define ALT_MODULE_CLASS_i2c_opencores_mipi i2c_opencores
-#define I2C_OPENCORES_MIPI_BASE 0x400810e0
+#define I2C_OPENCORES_MIPI_BASE 0x40081100
 #define I2C_OPENCORES_MIPI_IRQ -1
 #define I2C_OPENCORES_MIPI_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define I2C_OPENCORES_MIPI_NAME "/dev/i2c_opencores_mipi"
@@ -368,7 +368,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x400810f0
+#define JTAG_UART_0_BASE 0x40081110
 #define JTAG_UART_0_IRQ 3
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -400,7 +400,7 @@
  */
 
 #define ALT_MODULE_CLASS_mipi_pwdn_n altera_avalon_pio
-#define MIPI_PWDN_N_BASE 0x40081090
+#define MIPI_PWDN_N_BASE 0x400810b0
 #define MIPI_PWDN_N_BIT_CLEARING_EDGE_REGISTER 0
 #define MIPI_PWDN_N_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MIPI_PWDN_N_CAPTURE 0
@@ -427,7 +427,7 @@
  */
 
 #define ALT_MODULE_CLASS_mipi_reset_n altera_avalon_pio
-#define MIPI_RESET_N_BASE 0x400810a0
+#define MIPI_RESET_N_BASE 0x400810c0
 #define MIPI_RESET_N_BIT_CLEARING_EDGE_REGISTER 0
 #define MIPI_RESET_N_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MIPI_RESET_N_CAPTURE 0
@@ -512,7 +512,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_button altera_avalon_pio
-#define PIO_BUTTON_BASE 0x400810b0
+#define PIO_BUTTON_BASE 0x400810d0
 #define PIO_BUTTON_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_BUTTON_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_BUTTON_CAPTURE 0
@@ -539,7 +539,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_led altera_avalon_pio
-#define PIO_LED_BASE 0x400810c0
+#define PIO_LED_BASE 0x400810e0
 #define PIO_LED_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_LED_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_LED_CAPTURE 0
@@ -566,13 +566,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x400810d8
+#define SYSID_QSYS_0_BASE 0x400810f8
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1643928657
+#define SYSID_QSYS_0_TIMESTAMP 1644360235
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -583,7 +583,7 @@
 
 #define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
 #define TIMER_0_ALWAYS_RUN 0
-#define TIMER_0_BASE 0x40081020
+#define TIMER_0_BASE 0x40081040
 #define TIMER_0_COUNTER_SIZE 32
 #define TIMER_0_FIXED_PERIOD 0
 #define TIMER_0_FREQ 125000000
@@ -600,5 +600,31 @@
 #define TIMER_0_TICKS_PER_SEC 1000
 #define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
 #define TIMER_0_TYPE "altera_avalon_timer"
+
+
+/*
+ * timer_1 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_timer_1 altera_avalon_timer
+#define TIMER_1_ALWAYS_RUN 1
+#define TIMER_1_BASE 0x40081000
+#define TIMER_1_COUNTER_SIZE 32
+#define TIMER_1_FIXED_PERIOD 1
+#define TIMER_1_FREQ 125000000
+#define TIMER_1_IRQ 6
+#define TIMER_1_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_1_LOAD_VALUE 62499
+#define TIMER_1_MULT 1.0E-6
+#define TIMER_1_NAME "/dev/timer_1"
+#define TIMER_1_PERIOD 500
+#define TIMER_1_PERIOD_UNITS "us"
+#define TIMER_1_RESET_OUTPUT 0
+#define TIMER_1_SNAPSHOT 0
+#define TIMER_1_SPAN 32
+#define TIMER_1_TICKS_PER_SEC 2000
+#define TIMER_1_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_1_TYPE "altera_avalon_timer"
 
 #endif /* __SYSTEM_H_ */

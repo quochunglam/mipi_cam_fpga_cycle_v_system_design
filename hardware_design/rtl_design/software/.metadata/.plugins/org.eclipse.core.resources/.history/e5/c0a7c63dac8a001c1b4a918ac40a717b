@@ -1,0 +1,42 @@
+/*
+ * ocm_dma_buf.h
+ *
+ *  Created on: Feb 10, 2022
+ *      Author: quoch
+ */
+
+#ifndef OCM_DMA_BUF_H_
+#define OCM_DMA_BUF_H_
+
+
+#include "common_includes.h"
+
+#define OCM_MAX_LENGTH		128*1024		// 128KB
+#define DMA_CHUNK_SIZE		128*1024		// 128KB DMA chunk size
+#define DMA_REGION_NUM		2
+
+
+typedef struct{
+	alt_u32 wr_reg_idx;
+	alt_u32 rd_reg_idx;
+	alt_u32 head;
+	alt_u32 tail;
+	alt_u8	is_empty;
+	alt_u8 	is_full;
+	const alt_u32 maxlen;
+}dma_buf_st;
+
+#define DMA_OCM_BBUF_DEF(x,y)           	\
+		dma_buf_st x = {        			\
+			.wr_reg_idx = 0, 				\
+			.rd_reg_idx = 0, 				\
+			.head = 0,                    	\
+			.tail = 0,                    	\
+			.is_empty = 1,                	\
+			.is_full = 0,                 	\
+			.maxlen = y                   	\
+    	}
+
+int circ_bbuf_push (dma_buf_st *ddr, alt_u32 data);
+
+#endif /* OCM_DMA_BUF_H_ */

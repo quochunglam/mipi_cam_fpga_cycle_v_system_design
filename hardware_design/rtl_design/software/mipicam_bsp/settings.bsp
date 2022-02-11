@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 3, 2022 4:15:11 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1643933711970</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 10, 2022 4:41:36 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1644540096019</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\top.sopcinfo</SopcDesignFile>
@@ -917,86 +917,92 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>csr_regmap</slaveDescriptor>
+                <slaveDescriptor>timer_1</slaveDescriptor>
                 <addressRange>0x40081000 - 0x4008101F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>timer</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>csr_regmap</slaveDescriptor>
+                <addressRange>0x40081020 - 0x4008103F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>timer_0</slaveDescriptor>
-                <addressRange>0x40081020 - 0x4008103F</addressRange>
+                <addressRange>0x40081040 - 0x4008105F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>TERASIC_AUTO_FOCUS_0</slaveDescriptor>
-                <addressRange>0x40081040 - 0x4008105F</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>fifo_0_in_csr</slaveDescriptor>
                 <addressRange>0x40081060 - 0x4008107F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>fifo_0_in_csr</slaveDescriptor>
+                <addressRange>0x40081080 - 0x4008109F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>ddr3_status</slaveDescriptor>
-                <addressRange>0x40081080 - 0x4008108F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>mipi_pwdn_n</slaveDescriptor>
-                <addressRange>0x40081090 - 0x4008109F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>mipi_reset_n</slaveDescriptor>
                 <addressRange>0x400810A0 - 0x400810AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_button</slaveDescriptor>
+                <slaveDescriptor>mipi_pwdn_n</slaveDescriptor>
                 <addressRange>0x400810B0 - 0x400810BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pio_led</slaveDescriptor>
+                <slaveDescriptor>mipi_reset_n</slaveDescriptor>
                 <addressRange>0x400810C0 - 0x400810CF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>pio_button</slaveDescriptor>
+                <addressRange>0x400810D0 - 0x400810DF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>pio_led</slaveDescriptor>
+                <addressRange>0x400810E0 - 0x400810EF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>fifo_0_out</slaveDescriptor>
-                <addressRange>0x400810D0 - 0x400810D7</addressRange>
+                <addressRange>0x400810F0 - 0x400810F7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x400810D8 - 0x400810DF</addressRange>
+                <addressRange>0x400810F8 - 0x400810FF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>i2c_opencores_mipi</slaveDescriptor>
-                <addressRange>0x400810E0 - 0x400810E7</addressRange>
+                <addressRange>0x40081100 - 0x40081107</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>i2c_opencores_camera</slaveDescriptor>
-                <addressRange>0x400810E8 - 0x400810EF</addressRange>
+                <addressRange>0x40081108 - 0x4008110F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x400810F0 - 0x400810F7</addressRange>
+                <addressRange>0x40081110 - 0x40081117</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

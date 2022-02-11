@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'top'
 # SOPC Builder design path: ../../top.sopcinfo
 #
-# Generated: Thu Feb 03 13:57:03 PST 2022
+# Generated: Tue Feb 08 14:55:59 PST 2022
 
 # DO NOT MODIFY THIS FILE
 #
@@ -56,4 +56,4 @@ memory 0x40000000 0x40040000 cache
 memory 0x40060000 0x40080000 cache
 
 # csr_regmap
-memory 0x40081000 0x40081020 cache
+memory 0x40081020 0x40081040 cache

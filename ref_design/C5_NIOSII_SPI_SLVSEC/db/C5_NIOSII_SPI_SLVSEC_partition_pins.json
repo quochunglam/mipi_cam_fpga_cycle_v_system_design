@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_SS_n",
+					"strict" : false
+				},
+				{
+					"name" : "REG_1V2_EN",
+					"strict" : false
+				},
+				{
+					"name" : "REG_1V8_EN",
+					"strict" : false
+				},
+				{
+					"name" : "REG_3V3_EN",
+					"strict" : false
+				},
+				{
+					"name" : "INCK_EN",
+					"strict" : false
+				},
+				{
+					"name" : "XCLR",
+					"strict" : false
+				},
+				{
+					"name" : "B_LASER",
+					"strict" : false
+				},
+				{
+					"name" : "R_LASER",
+					"strict" : false
+				},
+				{
+					"name" : "DLP_EN",
+					"strict" : false
+				},
+				{
+					"name" : "XTRIG",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MISO",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

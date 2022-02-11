@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'top'
  * SOPC Builder design path: ../../top.sopcinfo
  *
- * Generated: Thu Feb 03 14:06:20 PST 2022
+ * Generated: Tue Feb 08 14:55:59 PST 2022
  */
 
 /*
@@ -65,7 +65,7 @@
  *
  */
 
-#define CSR_REGMAP_REGION_BASE 0x40081000
+#define CSR_REGMAP_REGION_BASE 0x40081020
 #define CSR_REGMAP_REGION_SPAN 32
 #define MEM_IF_DDR3_EMIF_0_REGION_BASE 0x0
 #define MEM_IF_DDR3_EMIF_0_REGION_SPAN 1073741824

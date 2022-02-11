@@ -1,6 +1,6 @@
-17:10:33 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+17:49:30 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
 make all 
 [BSP build complete]
 
-17:10:34 Build Finished (took 746ms)
+17:49:31 Build Finished (took 694ms)
 

@@ -1,0 +1,58 @@
+/*
+ * ocm_dma_buf.c
+ *
+ *  Created on: Feb 10, 2022
+ *      Author: quoch
+ */
+#include "ocm_dma_buf.h"
+
+int dma_ocm_buf_init(dma_buf_st **ocm){
+	for (int i = 0; i < DMA_REGION_NUM; i++){
+		*(ocm+i)->head = 0;
+		*(ocm+i)->tail = 0;
+		*(ocm+i)->offset = OCM_MAX_LENGTH*i;
+		*(ocm+i)->maxlen = OCM_MAX_LENGTH;
+	}
+}
+
+int circ_bbuf_push (dma_buf_st *ocm, alt_u32 data){
+	alt_u32 next;
+	next = ocm->head + 1;
+	if(next == ocm->maxlen) next = 0;
+
+	if(next == ocm->tail) return -1; // memory region is full
+	else {
+		// write data to dma ocm
+		IOWR(OCM_256K_DMA_BASE, ocm->offset + next, data);
+		// update the head
+		ocm->head = next;
+		return 0;
+	}
+}
+
+
+int dma_ocm_is_full (dma_buf_st *ocm){
+	alt_u32 next;
+	next = ocm->head + 1;
+	if(next == ocm->maxlen) next = 0;
+	if(next == ocm->tail) return 1;
+	else return 0;
+}
+
+int dma_ocm_reg_switch(dma_reg_st *reg){
+	alt_u8 dma_next_region;
+	dma_next_region = reg->head + 1;
+	if (dma_next_region == reg->maxreg) dma_next_region = 0;
+	if(dma_next_region == dmaocmreg->tail) return -1;	// failed to switch, all regions used up
+	else {
+		reg->head = dma_next_region;
+	}
+}
+
+int dma_ocm_reg_is_full (dma_reg_st *reg){
+	alt_u8 dma_next_region;
+	dma_next_region = reg->head + 1;
+	if (dma_next_region == reg->maxreg) dma_next_region = 0;
+	if(dma_next_region == dmaocmreg->tail) return 1;
+	else return 0;
+}

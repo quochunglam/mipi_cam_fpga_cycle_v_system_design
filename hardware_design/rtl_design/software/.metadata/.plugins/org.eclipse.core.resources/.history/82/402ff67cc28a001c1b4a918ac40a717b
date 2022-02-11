@@ -1,0 +1,23 @@
+/*
+ * ocm_dma_buf.c
+ *
+ *  Created on: Feb 10, 2022
+ *      Author: quoch
+ */
+#include "ocm_dma_buf.h"
+
+int dma_ocm_buf_init(dma_buf_st **ocm){
+
+}
+
+int circ_bbuf_push (dma_buf_st *ocm, alt_u32 data){
+	alt_u32 next;
+	next = ocm->head + 1;
+	if(next == ocm->maxlen) next = 0;
+
+}
+
+
+int dma_ocm_is_full (dma_buf_st *ocm){
+
+}

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'top'
  * SOPC Builder design path: ../../top.sopcinfo
  *
- * Generated: Thu Feb 03 14:06:20 PST 2022
+ * Generated: Tue Feb 08 14:55:59 PST 2022
  */
 
 /*
@@ -54,14 +54,14 @@ MEMORY
     ocm_256k_dma : ORIGIN = 0x40000000, LENGTH = 262144
     reset : ORIGIN = 0x40060000, LENGTH = 32
     nios_ram : ORIGIN = 0x40060020, LENGTH = 131040
-    csr_regmap : ORIGIN = 0x40081000, LENGTH = 32
+    csr_regmap : ORIGIN = 0x40081020, LENGTH = 32
 }
 
 /* Define symbols for each memory base-address */
 __alt_mem_mem_if_ddr3_emif_0 = 0x0;
 __alt_mem_ocm_256k_dma = 0x40000000;
 __alt_mem_nios_ram = 0x40060000;
-__alt_mem_csr_regmap = 0x40081000;
+__alt_mem_csr_regmap = 0x40081020;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",

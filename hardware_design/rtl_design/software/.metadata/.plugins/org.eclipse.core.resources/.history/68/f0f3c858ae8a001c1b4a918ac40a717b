@@ -1,0 +1,13 @@
+/*
+ * ocm_dma_buf.c
+ *
+ *  Created on: Feb 10, 2022
+ *      Author: quoch
+ */
+#include "ocm_dma_buf.n"
+#include "ddr3_circular_buf.h"
+
+int circ_bbuf_push (dma_buf_st *ocm, alt_u32 data){
+	// check if DDR3 buf is available to read
+
+}

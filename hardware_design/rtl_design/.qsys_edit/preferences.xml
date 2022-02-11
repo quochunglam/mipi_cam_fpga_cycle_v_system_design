@@ -14,7 +14,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/Interface Protocols/PCI Express/QSYS Example Designs,Library/Processors and Peripherals/Peripherals,Library/Interface Protocols/PCI Express,Library/Processors and Peripherals,Library,Library/Interface Protocols,Project" />
- <window width="3840" height="1984" x="0" y="0" />
+   expandedCategories="Library/Processors and Peripherals,Library/Processors and Peripherals/Peripherals,Project,Library" />
+ <window width="3840" height="2060" x="0" y="0" />
  <hdlexample language="VERILOG" />
 </preferences>

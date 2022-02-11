@@ -1,5 +1,6 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
+preplace inst top.ocm_256k_dma -pg 1 -lvl 12 -y 1010
 preplace inst top.alt_vip_cl_vfb_0.video_in.vid_back -pg 1
 preplace inst top.alt_vip_cl_vfb_0.rd_ctrl -pg 1
 preplace inst top.mem_if_ddr3_emif_0.pll_ref_clk -pg 1
@@ -11,32 +12,33 @@ preplace inst top.alt_vip_cl_vfb_0.pkt_trans_wr -pg 1
 preplace inst top.alt_vip_cl_vfb_0.av_st_reset_bridge -pg 1
 preplace inst top.pio_button -pg 1 -lvl 13 -y 1690
 preplace inst top.sysid_qsys_0 -pg 1 -lvl 13 -y 1510
-preplace inst top.ocm_128k_dma -pg 1 -lvl 13 -y 430
-preplace inst top.nios2_gen2_0 -pg 1 -lvl 11 -y 820
+preplace inst top.nios2_gen2_0 -pg 1 -lvl 11 -y 880
 preplace inst top.mem_if_ddr3_emif_0.dmaster.jtag_phy_embedded_in_jtag_master -pg 1
 preplace inst top.nios2_gen2_0.cpu -pg 1
 preplace inst top -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst top.mem_if_ddr3_emif_0.dmaster -pg 1
 preplace inst top.alt_vip_cl_vfb_0.video_out -pg 1
-preplace inst top.sdram_vfb -pg 1 -lvl 10 -y 1040
+preplace inst top.sdram_vfb -pg 1 -lvl 10 -y 1050
 preplace inst top.alt_vip_cl_vfb_0.sync_ctrl -pg 1
 preplace inst top.alt_vip_cl_vfb_0.video_in -pg 1
 preplace inst top.clk_0 -pg 1 -lvl 1 -y 1200
 preplace inst top.nios2_gen2_0.reset_bridge -pg 1
 preplace inst top.mem_if_ddr3_emif_0.dmaster.fifo -pg 1
-preplace inst top.jtag_uart_0 -pg 1 -lvl 13 -y 1160
+preplace inst top.jtag_uart_0 -pg 1 -lvl 13 -y 1140
 preplace inst top.mem_if_ddr3_emif_0.oct0 -pg 1
 preplace inst top.nios2_gen2_0.clock_bridge -pg 1
+preplace inst top.csr_regmap -pg 1 -lvl 12 -y 590
 preplace inst top.i2c_opencores_mipi -pg 1 -lvl 9 -y 900
 preplace inst top.mem_if_ddr3_emif_0 -pg 1 -lvl 9 -y 190
 preplace inst top.mem_if_ddr3_emif_0.dmaster.b2p_adapter -pg 1
 preplace inst top.mem_if_ddr3_emif_0.afi_clk -pg 1
 preplace inst top.mem_if_ddr3_emif_0.mp_cmd_reset_n_0 -pg 1
 preplace inst top.pll_0 -pg 1 -lvl 2 -y 1220
-preplace inst top.pcie_reconfig_driver_0 -pg 1 -lvl 10 -y 840
+preplace inst top.pcie_reconfig_driver_0 -pg 1 -lvl 10 -y 810
 preplace inst top.mem_if_ddr3_emif_0.dmaster.timing_adt -pg 1
 preplace inst top.mem_if_ddr3_emif_0.afi_reset_export -pg 1
 preplace inst top.mem_if_ddr3_emif_0.dmaster.p2b_adapter -pg 1
+preplace inst top.ddr3_status -pg 1 -lvl 12 -y 490
 preplace inst top.alt_vip_cl_vfb_0.av_st_clk_bridge -pg 1
 preplace inst top.alt_vip_cl_vfb_0.video_in.clk_bridge -pg 1
 preplace inst top.TERASIC_CAMERA_0 -pg 1 -lvl 3 -y 590
@@ -45,13 +47,12 @@ preplace inst top.mem_if_ddr3_emif_0.soft_reset -pg 1
 preplace inst top.mem_if_ddr3_emif_0.global_reset -pg 1
 preplace inst top.mipi_reset_n -pg 1 -lvl 13 -y 330
 preplace inst top.mem_if_ddr3_emif_0.dmaster.transacto -pg 1
-preplace inst top.csr_regmap_0 -pg 1 -lvl 13 -y 570
 preplace inst top.TERASIC_AUTO_FOCUS_0 -pg 1 -lvl 12 -y 860
 preplace inst top.pio_led -pg 1 -lvl 13 -y 1330
-preplace inst top.fifo_0 -pg 1 -lvl 13 -y 1020
+preplace inst top.fifo_0 -pg 1 -lvl 13 -y 1000
 preplace inst top.mem_if_ddr3_emif_0.as0 -pg 1
-preplace inst top.alt_vip_cl_vfb_0 -pg 1 -lvl 9 -y 690
-preplace inst top.pcie_256_dma -pg 1 -lvl 8 -y 780
+preplace inst top.alt_vip_cl_vfb_0 -pg 1 -lvl 9 -y 650
+preplace inst top.pcie_256_dma -pg 1 -lvl 8 -y 680
 preplace inst top.alt_vip_cl_vfb_0.wr_ctrl -pg 1
 preplace inst top.mem_if_ddr3_emif_0.dmaster.b2p -pg 1
 preplace inst top.alt_vip_cl_vfb_0.video_in.reset_bridge -pg 1
@@ -68,47 +69,48 @@ preplace inst top.mem_if_ddr3_emif_0.c0 -pg 1
 preplace inst top.mem_if_ddr3_emif_0.dmaster.p2b -pg 1
 preplace inst top.i2c_opencores_camera -pg 1 -lvl 9 -y 40
 preplace inst top.mem_if_ddr3_emif_0.s0 -pg 1
-preplace inst top.alt_xcvr_reconfig_0 -pg 1 -lvl 13 -y 880
-preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_reset_n_1,(SLAVE)sdram_vfb.reset,(SLAVE)nios_ram.reset1,(SLAVE)timer_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)alt_xcvr_reconfig_0.mgmt_rst_reset,(SLAVE)fifo_0.reset_in,(SLAVE)TERASIC_AUTO_FOCUS_0.reset,(SLAVE)mem_if_ddr3_emif_0.mp_cmd_reset_n_0,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_reset_n_0,(SLAVE)jtag_uart_0.reset,(SLAVE)pll_0.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)pio_led.reset,(SLAVE)mem_if_ddr3_emif_0.global_reset,(SLAVE)pio_button.reset,(SLAVE)mipi_pwdn_n.reset,(SLAVE)mem_if_ddr3_emif_0.soft_reset,(SLAVE)i2c_opencores_mipi.clock_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)i2c_opencores_camera.clock_reset,(SLAVE)alt_vip_cl_vfb_0.main_reset,(SLAVE)mipi_reset_n.reset,(SLAVE)TERASIC_CAMERA_0.clock_reset_reset,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_reset_n_0,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_reset_n_1,(SLAVE)ocm_128k_dma.reset1,(SLAVE)csr_regmap_0.rst_n_1) 1 1 12 470 1210 920 680 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 3340 1070 3990 1010 4310 1000 4850 990 5110
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(MASTER)TERASIC_AUTO_FOCUS_0.dout,(SLAVE)fifo_0.in) 1 12 1 5050
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)pcie_256_dma.hip_currentspeed,(SLAVE)pcie_reconfig_driver_0.hip_currentspeed) 1 7 3 2880 730 NJ 850 NJ
+preplace inst top.alt_xcvr_reconfig_0 -pg 1 -lvl 13 -y 860
+preplace netloc INTERCONNECT<net_container>top</net_container>(SLAVE)pcie_256_dma.wr_dts_slave,(MASTER)pcie_256_dma.dma_rd_master,(SLAVE)ocm_256k_dma.s2,(MASTER)pcie_256_dma.dma_wr_master,(SLAVE)pcie_256_dma.rd_dts_slave) 1 7 5 2760 1090 3240 1070 NJ 1040 NJ 1120 N
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(MASTER)TERASIC_AUTO_FOCUS_0.dout,(SLAVE)fifo_0.in) 1 12 1 5250
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.i2c_opencores_mipi_export,(SLAVE)i2c_opencores_mipi.export) 1 0 9 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)pcie_256_dma.hip_serial,(SLAVE)top.hip_serial) 1 0 8 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ 850 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.pcie_256_hip_avmm_0_reconfig_clk_locked,(SLAVE)pcie_256_dma.reconfig_clk_locked) 1 0 8 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.memory,(SLAVE)mem_if_ddr3_emif_0.memory) 1 0 9 NJ 430 NJ 430 NJ 240 NJ 240 NJ 240 NJ 240 NJ 240 NJ 240 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.terasic_camera_0_conduit_end,(SLAVE)TERASIC_CAMERA_0.conduit_end) 1 0 3 NJ 640 NJ 640 NJ
-preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)pll_0.refclk,(SLAVE)alt_xcvr_reconfig_0.mgmt_clk_clk,(MASTER)clk_0.clk) 1 1 12 450 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 5090
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)pio_led.external_connection,(SLAVE)top.pio_led_external_connection) 1 0 13 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)pcie_256_dma.refclk,(SLAVE)top.refclk) 1 0 8 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ 950 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)pcie_256_dma.hip_ctrl,(SLAVE)top.hip_ctrl) 1 0 8 NJ 670 NJ 670 NJ 750 NJ 740 NJ 740 NJ 740 NJ 740 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.pio_led_external_connection,(SLAVE)pio_led.external_connection) 1 0 13 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ 1360 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.oct,(SLAVE)mem_if_ddr3_emif_0.oct) 1 0 9 NJ 460 NJ 460 NJ 460 NJ 460 NJ 460 NJ 460 NJ 460 NJ 460 NJ
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)alt_xcvr_reconfig_0.reconfig_to_xcvr,(SLAVE)pcie_256_dma.reconfig_to_xcvr) 1 7 6 2840 710 NJ 830 NJ 830 NJ 740 NJ 770 5190
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)i2c_opencores_mipi.export,(SLAVE)top.i2c_opencores_mipi_export) 1 0 9 NJ 620 NJ 620 NJ 560 NJ 590 NJ 590 NJ 590 NJ 590 NJ 590 NJ
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)pcie_256_dma.reconfig_from_xcvr,(SLAVE)alt_xcvr_reconfig_0.reconfig_from_xcvr) 1 7 6 2880 1150 NJ 810 NJ 760 NJ 760 NJ 790 5210
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)pcie_256_dma.reconfig_to_xcvr,(SLAVE)alt_xcvr_reconfig_0.reconfig_to_xcvr) 1 7 6 2820 1070 NJ 830 NJ 780 NJ 780 NJ 770 5330
+preplace netloc FAN_IN<net_container>top</net_container>(MASTER)pcie_256_dma.rd_dcm_master,(MASTER)pcie_256_dma.wr_dcm_master,(SLAVE)pcie_256_dma.Txs) 1 7 2 2800 1050 3220
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)pcie_256_dma.reconfig_from_xcvr,(SLAVE)alt_xcvr_reconfig_0.reconfig_from_xcvr) 1 7 6 2780 1150 NJ 870 NJ 760 NJ 760 NJ 750 5370
 preplace netloc EXPORT<net_container>top</net_container>(MASTER)top.pll_0_outclk2_20mhz,(MASTER)pll_0.outclk2) 1 2 12 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ 1270 NJ
-preplace netloc FAN_IN<net_container>top</net_container>(MASTER)pcie_256_dma.wr_dcm_master,(SLAVE)pcie_256_dma.Txs,(MASTER)pcie_256_dma.rd_dcm_master) 1 7 2 2860 690 3220
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)sdram_vfb.wire,(SLAVE)top.sdram_vfb_wire) 1 0 10 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1110 NJ
+preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)ocm_256k_dma.clk2,(MASTER)pcie_256_dma.coreclkout,(SLAVE)csr_regmap.clk2,(SLAVE)pcie_reconfig_driver_0.pld_clk,(SLAVE)pcie_reconfig_driver_0.reconfig_xcvr_clk) 1 8 4 3280 1050 4070 980 NJ 1040 4990
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)sdram_vfb.wire,(SLAVE)top.sdram_vfb_wire) 1 0 10 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1170 NJ 1120 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.pcie_rstn,(SLAVE)pcie_256_dma.npor) 1 0 8 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.mem_if_ddr3_emif_0_pll_ref_clk,(SLAVE)mem_if_ddr3_emif_0.pll_ref_clk) 1 0 9 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)clk_0.clk_in,(SLAVE)top.clk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)pio_led.reset,(SLAVE)nios_ram.reset1,(MASTER)clk_0.clk_reset,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_reset_n_0,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_reset_n_1,(SLAVE)mem_if_ddr3_emif_0.soft_reset,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_reset_n_1,(SLAVE)fifo_0.reset_in,(SLAVE)alt_xcvr_reconfig_0.mgmt_rst_reset,(SLAVE)pio_button.reset,(SLAVE)mipi_reset_n.reset,(SLAVE)pll_0.reset,(SLAVE)TERASIC_CAMERA_0.clock_reset_reset,(SLAVE)mem_if_ddr3_emif_0.global_reset,(SLAVE)mem_if_ddr3_emif_0.mp_cmd_reset_n_0,(SLAVE)mipi_pwdn_n.reset,(SLAVE)TERASIC_AUTO_FOCUS_0.reset,(SLAVE)ocm_256k_dma.reset1,(SLAVE)timer_0.reset,(SLAVE)ddr3_status.reset,(SLAVE)i2c_opencores_mipi.clock_reset,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_reset_n_0,(SLAVE)sysid_qsys_0.reset,(SLAVE)sdram_vfb.reset,(SLAVE)csr_regmap.reset1,(SLAVE)alt_vip_cl_vfb_0.main_reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)i2c_opencores_camera.clock_reset) 1 1 12 470 1210 920 680 NJ 610 NJ 610 NJ 610 NJ 610 NJ 610 3380 1090 4110 960 4390 1100 4970 830 5270
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.terasic_auto_focus_0_conduit,(SLAVE)TERASIC_AUTO_FOCUS_0.Conduit) 1 0 12 NJ 1110 NJ 1110 NJ 1110 NJ 1110 NJ 1110 NJ 1110 NJ 1110 NJ 1110 NJ 890 NJ 1020 NJ 1080 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)pcie_256_dma.hip_pipe,(SLAVE)top.hip_pipe) 1 0 8 NJ 690 NJ 690 NJ 770 NJ 760 NJ 760 NJ 760 NJ 760 NJ
-preplace netloc EXPORT<net_container>top</net_container>(MASTER)pll_0.outclk1,(MASTER)top.pll_0_outclk1_100mhz) 1 2 12 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1220 NJ 1220 NJ 1220 NJ 1220 NJ 1220 NJ 1300 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.hip_serial,(SLAVE)pcie_256_dma.hip_serial) 1 0 8 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ 970 NJ
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)alt_vip_cl_vfb_0.din,(MASTER)TERASIC_CAMERA_0.avalon_streaming_source) 1 3 6 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 3380
-preplace netloc INTERCONNECT<net_container>top</net_container>(SLAVE)pcie_256_dma.rd_dts_slave,(SLAVE)pcie_256_dma.wr_dts_slave,(MASTER)pcie_256_dma.dma_rd_master,(SLAVE)ocm_128k_dma.s2,(MASTER)pcie_256_dma.dma_wr_master) 1 7 6 2820 670 3320 610 NJ 540 NJ 540 NJ 540 N
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)alt_vip_cl_vfb_0.din,(MASTER)TERASIC_CAMERA_0.avalon_streaming_source) 1 3 6 NJ 630 NJ 630 NJ 630 NJ 630 NJ 630 NJ
+preplace netloc EXPORT<net_container>top</net_container>(MASTER)top.pll_0_outclk1_100mhz,(MASTER)pll_0.outclk1) 1 2 12 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)mipi_pwdn_n.external_connection,(SLAVE)top.mipi_pwdn_n_external_connection) 1 0 13 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 30 NJ 260 NJ 260 NJ 260 NJ
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)mem_if_ddr3_emif_0.status,(SLAVE)top.mem_if_ddr3_emif_0_status) 1 0 9 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)mem_if_ddr3_emif_0.status,(SLAVE)top.mem_if_ddr3_emif_0_status) 1 0 9 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.pio_button_external_connection,(SLAVE)pio_button.external_connection) 1 0 13 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ 1720 NJ
-preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)i2c_opencores_camera.interrupt_sender,(SLAVE)timer_0.irq,(SLAVE)jtag_uart_0.irq,(SLAVE)i2c_opencores_mipi.interrupt_sender,(SLAVE)pio_button.irq,(MASTER)nios2_gen2_0.irq,(SLAVE)fifo_0.in_irq) 1 8 5 3460 790 NJ 720 NJ 720 4750 1090 5070
-preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)sdram_vfb.clk,(SLAVE)timer_0.clk,(SLAVE)mipi_reset_n.clk,(SLAVE)fifo_0.clk_in,(SLAVE)mem_if_ddr3_emif_0.mp_cmd_clk_0,(SLAVE)nios2_gen2_0.clk,(SLAVE)csr_regmap_0.clk_1,(SLAVE)TERASIC_CAMERA_0.clock_reset,(SLAVE)pio_button.clk,(SLAVE)TERASIC_AUTO_FOCUS_0.clock,(SLAVE)i2c_opencores_camera.clock,(SLAVE)sysid_qsys_0.clk,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_clk_1,(SLAVE)ocm_128k_dma.clk1,(SLAVE)jtag_uart_0.clk,(MASTER)pll_0.outclk0,(SLAVE)mipi_pwdn_n.clk,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_clk_0,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_clk_1,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_clk_0,(SLAVE)pio_led.clk,(SLAVE)nios_ram.clk1,(SLAVE)alt_vip_cl_vfb_0.main_clock,(SLAVE)i2c_opencores_mipi.clock) 1 2 11 900 580 NJ 610 NJ 610 NJ 610 NJ 610 NJ 610 3300 1030 3950 990 4270 960 4790 850 5170
-preplace netloc INTERCONNECT<net_container>top</net_container>(SLAVE)csr_regmap_0.avalon_slave_1,(SLAVE)timer_0.s1,(SLAVE)fifo_0.in_csr,(MASTER)nios2_gen2_0.data_master,(SLAVE)mipi_reset_n.s1,(SLAVE)mem_if_ddr3_emif_0.avl_0,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)fifo_0.out,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)i2c_opencores_camera.avalon_slave_0,(SLAVE)pio_led.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)pio_button.s1,(SLAVE)TERASIC_AUTO_FOCUS_0.mm_ctrl,(SLAVE)nios_ram.s1,(SLAVE)mipi_pwdn_n.s1,(SLAVE)ocm_128k_dma.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)i2c_opencores_mipi.avalon_slave_0) 1 8 5 3440 890 NJ 1030 4290 980 4770 830 5130
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(MASTER)pcie_256_dma.Rxm_BAR2,(SLAVE)csr_regmap_0.avalon_slave_0) 1 8 5 NJ 650 NJ 650 NJ 650 NJ 650 5050
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)mipi_reset_n.external_connection,(SLAVE)top.mipi_reset_n_external_connection) 1 0 13 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 590 NJ 360 NJ 360 NJ 360 NJ
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)mem_if_ddr3_emif_0.pll_ref_clk,(SLAVE)top.mem_if_ddr3_emif_0_pll_ref_clk) 1 0 9 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ
+preplace netloc FAN_IN<net_container>top</net_container>(SLAVE)sdram_vfb.s1,(MASTER)alt_vip_cl_vfb_0.mem_master_rd,(MASTER)alt_vip_cl_vfb_0.mem_master_wr) 1 9 1 3910
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)TERASIC_CAMERA_0.conduit_end,(SLAVE)top.terasic_camera_0_conduit_end) 1 0 3 NJ 640 NJ 640 NJ
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)mipi_reset_n.external_connection,(SLAVE)top.mipi_reset_n_external_connection) 1 0 13 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 610 NJ 360 NJ 360 NJ 360 NJ
 preplace netloc EXPORT<net_container>top</net_container>(SLAVE)top.i2c_opencores_camera_export,(SLAVE)i2c_opencores_camera.export) 1 0 9 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)TERASIC_AUTO_FOCUS_0.din,(MASTER)alt_vip_cl_vfb_0.dout) 1 9 3 NJ 700 NJ 700 4810
-preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)alt_xcvr_reconfig_0.reconfig_mgmt,(MASTER)pcie_reconfig_driver_0.reconfig_mgmt) 1 10 3 NJ 780 NJ 810 5150
-preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)pcie_reconfig_driver_0.reconfig_xcvr_rst,(SLAVE)csr_regmap_0.rst_n_0,(SLAVE)ocm_128k_dma.reset2,(MASTER)pcie_256_dma.nreset_status) 1 8 5 3240 1050 3930 520 NJ 520 NJ 520 5090
-preplace netloc EXPORT<net_container>top</net_container>(SLAVE)TERASIC_AUTO_FOCUS_0.Conduit,(SLAVE)top.terasic_auto_focus_0_conduit) 1 0 12 NJ 520 NJ 520 NJ 520 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 630 NJ 480 NJ 480 NJ
-preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)csr_regmap_0.clk_0,(SLAVE)pcie_reconfig_driver_0.pld_clk,(SLAVE)ocm_128k_dma.clk2,(MASTER)pcie_256_dma.coreclkout,(SLAVE)pcie_reconfig_driver_0.reconfig_xcvr_clk) 1 8 5 NJ 870 3990 500 NJ 500 NJ 500 5070
-preplace netloc FAN_IN<net_container>top</net_container>(MASTER)alt_vip_cl_vfb_0.mem_master_rd,(SLAVE)sdram_vfb.s1,(MASTER)alt_vip_cl_vfb_0.mem_master_wr) 1 9 1 3890
-levelinfo -pg 1 0 200 5570
-levelinfo -hier top 210 280 730 1120 1560 2000 2450 2700 3020 3690 4060 4490 4920 5250 5410
+preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)csr_regmap.reset2,(SLAVE)ocm_256k_dma.reset2,(MASTER)pcie_256_dma.nreset_status,(SLAVE)pcie_reconfig_driver_0.reconfig_xcvr_rst) 1 8 4 3260 1030 3870 1000 NJ 1060 4950
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)TERASIC_AUTO_FOCUS_0.din,(MASTER)alt_vip_cl_vfb_0.dout) 1 9 3 NJ 660 NJ 660 4910
+preplace netloc INTERCONNECT<net_container>top</net_container>(SLAVE)timer_0.s1,(SLAVE)mipi_reset_n.s1,(SLAVE)pio_led.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)pio_button.s1,(SLAVE)ocm_256k_dma.s1,(SLAVE)mem_if_ddr3_emif_0.avl_0,(SLAVE)TERASIC_AUTO_FOCUS_0.mm_ctrl,(SLAVE)nios_ram.s1,(SLAVE)fifo_0.in_csr,(SLAVE)ddr3_status.s1,(SLAVE)i2c_opencores_camera.avalon_slave_0,(SLAVE)fifo_0.out,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)csr_regmap.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)i2c_opencores_mipi.avalon_slave_0,(SLAVE)mipi_pwdn_n.s1) 1 8 5 3460 850 NJ 800 4430 840 4870 790 5290
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)pcie_256_dma.reconfig_clk_locked,(SLAVE)top.pcie_256_hip_avmm_0_reconfig_clk_locked) 1 0 8 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ 930 NJ
+preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)jtag_uart_0.irq,(SLAVE)fifo_0.in_irq,(SLAVE)pio_button.irq,(SLAVE)i2c_opencores_mipi.interrupt_sender,(SLAVE)i2c_opencores_camera.interrupt_sender,(MASTER)nios2_gen2_0.irq,(SLAVE)timer_0.irq) 1 8 5 3480 790 NJ 720 NJ 720 4810 1160 5250
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(SLAVE)pcie_reconfig_driver_0.hip_currentspeed,(SLAVE)pcie_256_dma.hip_currentspeed) 1 7 3 2780 670 NJ 810 4010
+preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)sdram_vfb.clk,(SLAVE)TERASIC_AUTO_FOCUS_0.clock,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_clk_0,(SLAVE)ocm_256k_dma.clk1,(SLAVE)fifo_0.clk_in,(SLAVE)timer_0.clk,(SLAVE)ddr3_status.clk,(SLAVE)mem_if_ddr3_emif_0.mp_cmd_clk_0,(SLAVE)nios_ram.clk1,(SLAVE)sysid_qsys_0.clk,(SLAVE)pio_led.clk,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_clk_0,(SLAVE)csr_regmap.clk1,(SLAVE)nios2_gen2_0.clk,(SLAVE)TERASIC_CAMERA_0.clock_reset,(MASTER)pll_0.outclk0,(SLAVE)mipi_reset_n.clk,(SLAVE)i2c_opencores_camera.clock,(SLAVE)mem_if_ddr3_emif_0.mp_rfifo_clk_1,(SLAVE)mem_if_ddr3_emif_0.mp_wfifo_clk_1,(SLAVE)mipi_pwdn_n.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)i2c_opencores_mipi.clock,(SLAVE)alt_vip_cl_vfb_0.main_clock,(SLAVE)pio_button.clk) 1 2 11 900 700 NJ 700 NJ 700 NJ 700 NJ 700 NJ 650 3320 750 3970 740 4450 820 4930 850 5350
+preplace netloc EXPORT<net_container>top</net_container>(SLAVE)ddr3_status.external_connection,(SLAVE)top.ddr3_status_external_connection) 1 0 12 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 590 NJ 520 NJ 520 NJ
+preplace netloc FAN_OUT<net_container>top</net_container>(SLAVE)alt_xcvr_reconfig_0.mgmt_clk_clk,(SLAVE)pll_0.refclk,(MASTER)clk_0.clk) 1 1 12 450 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 5230
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(MASTER)pcie_reconfig_driver_0.reconfig_mgmt,(SLAVE)alt_xcvr_reconfig_0.reconfig_mgmt) 1 10 3 NJ 1020 NJ 810 5310
+preplace netloc POINT_TO_POINT<net_container>top</net_container>(MASTER)pcie_256_dma.Rxm_BAR2,(SLAVE)csr_regmap.s2) 1 8 4 NJ 770 NJ 700 NJ 700 N
+levelinfo -pg 1 0 200 5720
+levelinfo -hier top 210 280 730 1120 1560 2000 2450 2700 3020 3690 4140 4570 5080 5400 5560

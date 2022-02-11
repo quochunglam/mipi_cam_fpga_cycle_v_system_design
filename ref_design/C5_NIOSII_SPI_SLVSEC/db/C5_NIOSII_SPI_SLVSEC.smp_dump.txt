@@ -1,0 +1,27 @@
+
+State Machine - |C5_NIOSII_SPI_SLVSEC_TOP|c5_niosii_spi_slvsec:u_c5_niosii_spi_slvsec|c5_niosii_spi_slvsec_niosii_cpu:niosii_cpu|c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0:nios2_gen2_0|c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu:cpu|c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu_nios2_oci:the_c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu_nios2_oci|c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu_debug_slave_wrapper:the_c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu_debug_slave_wrapper|c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu_debug_slave_tck:the_c5_niosii_spi_slvsec_niosii_cpu_nios2_gen2_0_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |C5_NIOSII_SPI_SLVSEC_TOP|c5_niosii_spi_slvsec:u_c5_niosii_spi_slvsec|laser_dlp_xtrig_controller_avms:laser_dlp_xtrig_controller_0|laser_dlp_xtrig_controller:u_laser_dlp_xtrig_controller|current_state
+Name current_state.STATE3 current_state.STATE2 current_state.STATE1 current_state.STATE0 current_state.STATE4 
+current_state.STATE0 0 0 0 0 0 
+current_state.STATE1 0 0 1 1 0 
+current_state.STATE2 0 1 0 1 0 
+current_state.STATE3 1 0 0 1 0 
+current_state.STATE4 0 0 0 1 1 
+
+State Machine - |C5_NIOSII_SPI_SLVSEC_TOP|c5_niosii_spi_slvsec:u_c5_niosii_spi_slvsec|camera_poweron_sequence_sm:imx421_poweron_0|current_state
+Name current_state.DISABLE current_state.STATE5 current_state.STATE4 current_state.STATE3 current_state.STATE2 current_state.STATE1 current_state.STATE0 
+current_state.STATE0 0 0 0 0 0 0 0 
+current_state.STATE1 0 0 0 0 0 1 1 
+current_state.STATE2 0 0 0 0 1 0 1 
+current_state.STATE3 0 0 0 1 0 0 1 
+current_state.STATE4 0 0 1 0 0 0 1 
+current_state.STATE5 0 1 0 0 0 0 1 
+current_state.DISABLE 1 0 0 0 0 0 1 

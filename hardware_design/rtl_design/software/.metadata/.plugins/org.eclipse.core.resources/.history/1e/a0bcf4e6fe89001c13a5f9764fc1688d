@@ -1,0 +1,46 @@
+/*
+ * ddr3_circular_buf.c
+ *
+ *  Created on: Feb 9, 2022
+ *      Author: quoch
+ */
+
+#include "ddr3_circular_buf.h"
+
+int circ_bbuf_push (DDR3_Circular_buf_st *ddr, alt_u32 data){
+	alt_u32 next;	// next is where head will point to after this write
+	next = ddr->head + 1;
+	if (next >= ddr->maxlen) next = 0;
+
+	if (next == ddr->tail){// head + 1 = tail, then buffer is full
+		ddr->is_full = 1;
+		return -1;
+	}
+	else{
+		// write data into next address of DDR3
+		IOWR(MEM_IF_DDR3_EMIF_0_BASE, next, data);
+		// update empty status
+		ddr->is_empty = 0;
+		// update head
+		ddr->head = next;
+		return 0;
+	}
+}
+
+
+int circ_bbuf_pop (DDR3_Circular_buf_st *ddr, alt_u32 *data){
+	alt_u32 next;
+	if (ddr->head == ddr->tail){ // buffer is empty
+		ddr->is_empty = 1;
+		return -1;
+	}
+	else{
+		next = ddr->tail + 1;
+		if (next >= ddr->maxlen) next = 0;
+
+		// read data from DDR3
+		*data = IORD(MEM_IF_DDR3_EMIF_0_BASE, )
+		ddr->is_full = 0;
+	}
+
+}

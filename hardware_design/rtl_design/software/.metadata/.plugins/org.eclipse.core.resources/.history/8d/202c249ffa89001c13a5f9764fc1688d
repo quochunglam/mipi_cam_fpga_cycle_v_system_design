@@ -1,0 +1,21 @@
+/*
+ * ddr3_circular_buf.h
+ *
+ *  Created on: Feb 9, 2022
+ *      Author: quoch
+ */
+
+#ifndef DDR3_CIRCULAR_BUF_H_
+#define DDR3_CIRCULAR_BUF_H_
+
+#include "common_includes.h"
+
+#define DDR3_MAX_LENGTH		512*1024	// 512KB
+
+typedef struct{
+	alt_u32 head;
+	alt_u32 tail;
+	const alt_u32 maxlen;
+}DDR3_Circular_buf;
+
+#endif /* DDR3_CIRCULAR_BUF_H_ */

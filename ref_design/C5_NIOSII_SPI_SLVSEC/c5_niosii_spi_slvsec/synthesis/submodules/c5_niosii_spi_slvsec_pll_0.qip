@@ -1,0 +1,4 @@
+set_instance_assignment -name PLL_COMPENSATION_MODE DIRECT -to "*c5_niosii_spi_slvsec_pll_0*|altera_pll:altera_pll_i*|*"
+ 
+set_instance_assignment -name PLL_AUTO_RESET OFF -to "*c5_niosii_spi_slvsec_pll_0*|altera_pll:altera_pll_i*|*"
+set_instance_assignment -name PLL_BANDWIDTH_PRESET AUTO -to "*c5_niosii_spi_slvsec_pll_0*|altera_pll:altera_pll_i*|*"

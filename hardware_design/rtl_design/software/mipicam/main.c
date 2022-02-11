@@ -2,8 +2,12 @@
 #include "I2C_core.h"
 #include "mipi_camera_config.h"
 #include "mipi_bridge_config.h"
+#include "ddr3_circular_buf.h"
+#include "ocm_dma_buf.h"
 
 #include "auto_focus.h"
+#include "altera_avalon_fifo_util.h"
+#include "sys/alt_irq.h"
 
 #define DEFAULT_LEVEL 			0x02
 
@@ -30,9 +34,18 @@
 #define MIPI_REG_FrmErrCnt		0x0080
 #define MIPI_REG_MDLErrCnt		0x0090
 
+// TODO: check almostfull threshold to eliminate the number of fifo interrupt
+#define ALMOSTFULL_THRESHOLD	0x0064
+#define ALMOSTEMPT_THRESHOLD	0x0001
+#define FIFO_CSR_IE				0x0005
 // CAM STSP
 #define CAM_START_STREAMING		0x01
 #define CAM_STOP_STREAMING 		0x00
+#define CAM_STARTSTOP_MASK		0x08
+
+// Frame size
+#define FRAME_SIZE_H			640
+#define FRAME_SIZE_V			480
 
 // global variables definition
 bool bShowMessage = TRUE;
@@ -40,9 +53,45 @@ alt_u8 gDDR3_status;
 alt_u8 gSys_status = 0x0;
 const alt_u8 KeyMask = 0x0F; // 4 button
 alt_u16  cam_current_focus;
+
+int fifo_fill_level;
+int fifo_data;
+volatile int fifo_irq_event;
+
+alt_u8 iframe_cnt;
+alt_u8 ipackage_cnt;
+int ipackage_size;
+
+#define START_FRAME_STATE		0x1
+#define CONTENT_FRAME_STATE		0x2
+#define END_FRAME_STATE			0x3
+
+int FSM_statemachine;
+int pixel_cnt;
+int line_cnt;
+
+alt_u16 sframe_size_h, sframe_size_v;
+
+alt_u32 uiCam_DMA_address_l, uiCam_DMA_address_h;
+alt_u32 uiCam_DMA_size;
+alt_u16 uiCam_DMA_status;
+alt_u32 uiCam_Debug;
+alt_u8  uiAuto_focus;
+alt_u8 	uiCam_streaming;	// 1: start, 0: stop
+
+DDR3_CIRC_BBUF_DEF(mipicambuf, DDR3_MAX_LENGTH);
+DMA_OCM_BUF_DEF(dmaocmbuf, OCM_MAX_LENGTH, DMA_REGION_NUM);
+DMA_OCM_REG_DEF(dmaocmreg, DMA_REGION_NUM);
+
+alt_u8 ocm_writting_fsm;
+
 // global flags definition
 #define MIPI_SHOW_ERROR
 
+// frame header, footer definition
+#define FRAME_HEADER			0x1EADCAFE
+#define FRAME_CONTENT			0x55555555
+#define FRAME_FOOTER			0xDEADCAFE
 
 void mipi_clear_error(void){
 	MipiBridgeRegWrite(MIPI_REG_CSIStatus, 0x01FF); // clear error
@@ -110,6 +159,14 @@ bool MIPI_Init(void){
 	return bSuccess;
 }
 
+// interrupt service routine for fifo
+static void fifo_irq(void* context, alt_u32 id){
+	// read data and write to DDR3 until FIFO empty
+	FIFO_read();
+	// TODO :clear interrupt flag
+	//
+}
+
 int main()
 {
 	// ------------ Camera System Initialization ------------ //
@@ -155,13 +212,180 @@ int main()
 	cam_current_focus = Focus_Window(320,240);
 
 	// Stop camera streaming
-	OV8865_StartStop_Streaming(CAM_STOP_STREAMING);
+	uiCam_streaming = CAM_STOP_STREAMING;
+	OV8865_StartStop_Streaming(uiCam_streaming);
 
-	// fifo register clean up - prepare for the mem read/write
+	// fifo initialization: interrupt at almostfull and full, almostempty = almostfull = 1
+	// Disable FIFO interrupt
+	altera_avalon_fifo_init(FIFO_0_IN_CSR_BASE, 0x0/*Disabled interrupts*/, ALMOSTEMPT_THRESHOLD, ALMOSTFULL_THRESHOLD);
+
+	do{
+		// clean up fifo data
+		fifo_fill_level = altera_avalon_read_fifo(FIFO_0_OUT_BASE, FIFO_0_IN_CSR_BASE, &fifo_data);
+	}
+	while(fifo_fill_level);
+
+	// Enable FIFO interrupt
+	altera_avalon_fifo_init(FIFO_0_IN_CSR_BASE, FIFO_CSR_IE, ALMOSTEMPT_THRESHOLD, ALMOSTFULL_THRESHOLD);
+	void* fifo_irq_event_ptr = &fifo_irq_event;
+
+	// Register FIFO interrupt handler
+	alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+
+	// clear global variables
+	// read data from FIFO, then write to DDR3
+	FSM_statemachine 	= START_FRAME_STATE;
+	pixel_cnt 			= 0;
+	line_cnt 			= 0;
+	iframe_cnt 			= 0;
+	ipackage_cnt 		= 0;
+	ipackage_size 		= DMA_CHUNK_SIZE;
+	ocm_writting_fsm	= HEADER_ID_STATE;
 
 	// TODO: read csr register and implement camera read/write strategy
+	do { // infinity loop
+		if(uiCam_streaming){
+			// read DDR3 data and write to OCM DMA
+			OCM_write();
+			// check if Cam streaming bit to stop
+			if(IORD(CSR_REGMAP_BASE, 0x1) && CAM_STARTSTOP_MASK){
+				uiCam_streaming = CAM_STOP_STREAMING;
+				OV8865_StartStop_Streaming(uiCam_streaming);
+			}
+		}else { // Cam streaming stopped
+			// check if Cam streaming bit to start
+			if(IORD(CSR_REGMAP_BASE, 0x1) && CAM_STARTSTOP_MASK){
+				uiCam_streaming = CAM_START_STREAMING;
+				OV8865_StartStop_Streaming(uiCam_streaming);
+			}
+		}
+	}while (1);
 
     return 0;
 }
 
+// read FIFO data and write to DDR3 until FIFO empty
+// pixel code: 4 bytes = 0x11 && RGB 24bits pixel --> Start Frame pixel
+//						 0x55 && RGB 24bits pixel --> Content pixel
+//						 0xAA && RGB 24bits pixel --> End Frame pixel
+#define SF_PIXEL 		0x11000000
+#define CF_PIXEL		0x55000000
+#define EF_PIXEL 		0xAA000000
 
+
+void FIFO_read(void){
+	alt_u32 read_data;
+	int ddr3_write_status;
+
+	do{
+		// check if DDR3 is not full to write
+		if (circ_bbuf_is_full(&mipicambuf)) break;
+		// read FIFO data out, then write to DDR3
+		fifo_fill_level = altera_avalon_read_fifo(FIFO_0_OUT_BASE, FIFO_0_IN_CSR_BASE, &fifo_data);
+		// FSM_statemachine = 0, then read FIFO data and throw way
+		switch (FSM_statemachine){
+			case START_FRAME_STATE:
+				read_data = ((alt_u32)fifo_data | SF_PIXEL);
+				FSM_statemachine = CONTENT_FRAME_STATE;
+				break;
+			case CONTENT_FRAME_STATE:
+				read_data = ((alt_u32)fifo_data | CF_PIXEL);
+				if ((line_cnt == FRAME_SIZE_V-1)&&(pixel_cnt == FRAME_SIZE_H-2)) FSM_statemachine = END_FRAME_STATE;
+				break;
+			case END_FRAME_STATE:
+				read_data = ((alt_u32)fifo_data | EF_PIXEL);
+				FSM_statemachine = START_FRAME_STATE;
+				break;
+			default: break;
+		}
+		// counting pixel
+		pixel_cnt++;
+		if (pixel_cnt == FRAME_SIZE_H) {
+			pixel_cnt = 0;
+			line_cnt++;
+			if(line_cnt == FRAME_SIZE_V) {
+				line_cnt = 0;
+			}
+		}
+		// write data to DDR3
+		ddr3_write_status = circ_bbuf_push(&mipicambuf, read_data);
+		if (ddr3_write_status == -1) break;
+	}
+	while(fifo_fill_level);	// read until FIFO empty
+}
+
+void OCM_write(void){
+	// TODO: 1. read DDR3 circular buffer, read data out if not is_empty, 2. write data to OCM
+	alt_u32 ddr3_data;
+	alt_u32 header_data;
+	alt_u32 dma_mem_status;
+	// check if there is an available in the current region
+	do {
+		// check if ocm available
+		if(dma_ocm_is_full(&dmaocmbuf[dmaocmreg.head])){
+			dma_mem_status = IORD(CSR_REGMAP_BASE, 6);
+			dmaocmreg.tail = (alt_u16)dma_mem_status;	// read dma->tail from csr regmap
+			if(dma_ocm_reg_is_full(&dmaocmreg)){
+				//memory + memory region full
+				break;
+			}
+			else {
+				// switch to another memory region
+				dma_ocm_reg_switch(&dmaocmreg);
+				// write dmaocmreg->head into CSR register
+				dma_mem_status = IORD(CSR_REGMAP_BASE, 6);
+				IOWR(CSR_REGMAP_BASE, 6, ((alt_u32)dmaocmreg.head << 16)|(dma_mem_status & 0x0000FFFF));
+				// swicth to new state
+				ocm_writting_fsm++;
+				if(ocm_writting_fsm > FOOTER_PACK_STATE) {
+					ocm_writting_fsm = HEADER_ID_STATE;
+					iframe_cnt++;
+				}
+				ipackage_cnt++;
+
+				break; // break after writing successfully 128KB
+			}
+		}
+		// check if DDR3 available to read
+		if(!circ_bbuf_is_empty(&mipicambuf)){
+			// read DDR3 data, then write to OCM
+			circ_bbuf_pop(&mipicambuf, &ddr3_data);
+			switch(ocm_writting_fsm){
+				case HEADER_ID_STATE:
+					dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+					header_data = ((alt_u32)iframe_cnt<<(3*8)) + ((alt_32)ipackage_cnt<<(2*8)) + ((alt_u32)ipackage_size);
+					dma_ocm_buf_push(&dmaocmbuf, header_data);
+					dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+					ocm_writting_fsm = HEADER_PACK_STATE;
+					break;
+				case HEADER_PACK_STATE:
+					dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+					break;
+				case CONTENT_ID_STATE:
+					dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+					header_data = ((alt_u32)iframe_cnt<<(3*8)) + ((alt_32)ipackage_cnt<<(2*8)) + ((alt_u32)ipackage_size);
+					dma_ocm_buf_push(&dmaocmbuf, header_data);
+					dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+					ocm_writting_fsm = CONTENT_PACK_STATE;
+					break;
+				case CONTENT_PACK_STATE:
+					dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+					break;
+				case FOOTER_ID_STATE:
+					dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+					header_data = ((alt_u32)iframe_cnt<<(3*8)) + ((alt_32)ipackage_cnt<<(2*8)) + ((alt_u32)ipackage_size);
+					dma_ocm_buf_push(&dmaocmbuf, header_data);
+					dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+					ocm_writting_fsm = FOOTER_PACK_STATE;
+					break;
+				case FOOTER_PACK_STATE:
+					dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+					break;
+				default: break;
+			}
+		}
+		else {
+			break;
+		}
+	}while(1);
+}

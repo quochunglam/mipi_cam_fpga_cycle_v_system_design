@@ -12,7 +12,9 @@ obj/default/main.o: main.c common_includes.h ../mipicam_bsp/system.h \
  ../mipicam_bsp//HAL/inc/priv/alt_dev_llist.h \
  ../mipicam_bsp//HAL/inc/sys/alt_warning.h \
  ../mipicam_bsp//HAL/inc/sys/alt_stdio.h I2C_core.h mipi_camera_config.h \
- mipi_bridge_config.h auto_focus.h
+ mipi_bridge_config.h ddr3_circular_buf.h ocm_dma_buf.h auto_focus.h \
+ ../mipicam_bsp//drivers/inc/altera_avalon_fifo_util.h \
+ ../mipicam_bsp//drivers/inc/altera_avalon_fifo_regs.h
 
 common_includes.h:
 
@@ -56,4 +58,12 @@ mipi_camera_config.h:
 
 mipi_bridge_config.h:
 
+ddr3_circular_buf.h:
+
+ocm_dma_buf.h:
+
 auto_focus.h:
+
+../mipicam_bsp//drivers/inc/altera_avalon_fifo_util.h:
+
+../mipicam_bsp//drivers/inc/altera_avalon_fifo_regs.h:

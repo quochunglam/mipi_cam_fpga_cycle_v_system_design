@@ -147,6 +147,8 @@ C_SRCS += I2C_core.c
 C_SRCS += mipi_bridge_config.c
 C_SRCS += mipi_camera_config.c
 C_SRCS += auto_focus.c
+C_SRCS += ddr3_circular_buf.c
+C_SRCS += ocm_dma_buf.c
 CXX_SRCS :=
 ASM_SRCS :=
 

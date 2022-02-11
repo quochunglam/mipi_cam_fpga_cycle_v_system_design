@@ -1,5 +1,6 @@
 	top u0 (
 		.clk_clk                                                 (<connected-to-clk_clk>),                                                 //                                     clk.clk
+		.ddr3_status_external_connection_export                  (<connected-to-ddr3_status_external_connection_export>),                  //         ddr3_status_external_connection.export
 		.hip_ctrl_test_in                                        (<connected-to-hip_ctrl_test_in>),                                        //                                hip_ctrl.test_in
 		.hip_ctrl_simu_mode_pipe                                 (<connected-to-hip_ctrl_simu_mode_pipe>),                                 //                                        .simu_mode_pipe
 		.hip_pipe_sim_pipe_pclk_in                               (<connected-to-hip_pipe_sim_pipe_pclk_in>),                               //                                hip_pipe.sim_pipe_pclk_in
@@ -131,7 +132,6 @@
 		.terasic_camera_0_conduit_end_cam_d                      (<connected-to-terasic_camera_0_conduit_end_cam_d>),                      //            terasic_camera_0_conduit_end.cam_d
 		.terasic_camera_0_conduit_end_cam_fval                   (<connected-to-terasic_camera_0_conduit_end_cam_fval>),                   //                                        .cam_fval
 		.terasic_camera_0_conduit_end_cam_lval                   (<connected-to-terasic_camera_0_conduit_end_cam_lval>),                   //                                        .cam_lval
-		.terasic_camera_0_conduit_end_cam_pix                    (<connected-to-terasic_camera_0_conduit_end_cam_pix>),                    //                                        .cam_pix
-		.ddr3_status_external_connection_export                  (<connected-to-ddr3_status_external_connection_export>)                   //         ddr3_status_external_connection.export
+		.terasic_camera_0_conduit_end_cam_pix                    (<connected-to-terasic_camera_0_conduit_end_cam_pix>)                     //                                        .cam_pix
 	);
 

@@ -1,6 +1,7 @@
 	component top is
 		port (
 			clk_clk                                                 : in    std_logic                     := 'X';             -- clk
+			ddr3_status_external_connection_export                  : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- export
 			hip_ctrl_test_in                                        : in    std_logic_vector(31 downto 0) := (others => 'X'); -- test_in
 			hip_ctrl_simu_mode_pipe                                 : in    std_logic                     := 'X';             -- simu_mode_pipe
 			hip_pipe_sim_pipe_pclk_in                               : in    std_logic                     := 'X';             -- sim_pipe_pclk_in
@@ -132,14 +133,14 @@
 			terasic_camera_0_conduit_end_cam_d                      : in    std_logic_vector(11 downto 0) := (others => 'X'); -- cam_d
 			terasic_camera_0_conduit_end_cam_fval                   : in    std_logic                     := 'X';             -- cam_fval
 			terasic_camera_0_conduit_end_cam_lval                   : in    std_logic                     := 'X';             -- cam_lval
-			terasic_camera_0_conduit_end_cam_pix                    : in    std_logic                     := 'X';             -- cam_pix
-			ddr3_status_external_connection_export                  : in    std_logic_vector(2 downto 0)  := (others => 'X')  -- export
+			terasic_camera_0_conduit_end_cam_pix                    : in    std_logic                     := 'X'              -- cam_pix
 		);
 	end component top;
 
 	u0 : component top
 		port map (
 			clk_clk                                                 => CONNECTED_TO_clk_clk,                                                 --                                     clk.clk
+			ddr3_status_external_connection_export                  => CONNECTED_TO_ddr3_status_external_connection_export,                  --         ddr3_status_external_connection.export
 			hip_ctrl_test_in                                        => CONNECTED_TO_hip_ctrl_test_in,                                        --                                hip_ctrl.test_in
 			hip_ctrl_simu_mode_pipe                                 => CONNECTED_TO_hip_ctrl_simu_mode_pipe,                                 --                                        .simu_mode_pipe
 			hip_pipe_sim_pipe_pclk_in                               => CONNECTED_TO_hip_pipe_sim_pipe_pclk_in,                               --                                hip_pipe.sim_pipe_pclk_in
@@ -271,7 +272,6 @@
 			terasic_camera_0_conduit_end_cam_d                      => CONNECTED_TO_terasic_camera_0_conduit_end_cam_d,                      --            terasic_camera_0_conduit_end.cam_d
 			terasic_camera_0_conduit_end_cam_fval                   => CONNECTED_TO_terasic_camera_0_conduit_end_cam_fval,                   --                                        .cam_fval
 			terasic_camera_0_conduit_end_cam_lval                   => CONNECTED_TO_terasic_camera_0_conduit_end_cam_lval,                   --                                        .cam_lval
-			terasic_camera_0_conduit_end_cam_pix                    => CONNECTED_TO_terasic_camera_0_conduit_end_cam_pix,                    --                                        .cam_pix
-			ddr3_status_external_connection_export                  => CONNECTED_TO_ddr3_status_external_connection_export                   --         ddr3_status_external_connection.export
+			terasic_camera_0_conduit_end_cam_pix                    => CONNECTED_TO_terasic_camera_0_conduit_end_cam_pix                     --                                        .cam_pix
 		);
 

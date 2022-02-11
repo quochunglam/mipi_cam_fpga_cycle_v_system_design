@@ -1,0 +1,20 @@
+/*
+ * ocm_dma_buf.c
+ *
+ *  Created on: Feb 10, 2022
+ *      Author: quoch
+ */
+#include "ocm_dma_buf.h"
+
+int circ_bbuf_push (dma_buf_st **ocm, alt_u32 data){
+	// check if ocm dma is not full
+	// return -1 if error
+
+	// write data to ocm dma buffer
+
+}
+
+
+int dma_ocm_is_full (dma_buf_st *8ocm){
+
+}

@@ -1,6 +1,7 @@
 
 module top (
 	clk_clk,
+	ddr3_status_external_connection_export,
 	hip_ctrl_test_in,
 	hip_ctrl_simu_mode_pipe,
 	hip_pipe_sim_pipe_pclk_in,
@@ -132,10 +133,10 @@ module top (
 	terasic_camera_0_conduit_end_cam_d,
 	terasic_camera_0_conduit_end_cam_fval,
 	terasic_camera_0_conduit_end_cam_lval,
-	terasic_camera_0_conduit_end_cam_pix,
-	ddr3_status_external_connection_export);	
+	terasic_camera_0_conduit_end_cam_pix);	
 
 	input		clk_clk;
+	input	[2:0]	ddr3_status_external_connection_export;
 	input	[31:0]	hip_ctrl_test_in;
 	input		hip_ctrl_simu_mode_pipe;
 	input		hip_pipe_sim_pipe_pclk_in;
@@ -268,5 +269,4 @@ module top (
 	input		terasic_camera_0_conduit_end_cam_fval;
 	input		terasic_camera_0_conduit_end_cam_lval;
 	input		terasic_camera_0_conduit_end_cam_pix;
-	input	[2:0]	ddr3_status_external_connection_export;
 endmodule

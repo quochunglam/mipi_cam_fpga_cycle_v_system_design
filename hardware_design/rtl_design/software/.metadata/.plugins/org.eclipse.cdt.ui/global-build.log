@@ -1,59 +1,1101 @@
-16:15:32 **** Incremental Build of configuration Nios II for project mipicam ****
+16:41:41 **** Incremental Build of configuration Nios II for project mipicam ****
 make all 
 Info: Building ../mipicam_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
 [BSP build complete]
-[mipicam build complete]
-16:15:41 **** Incremental Build of configuration Nios II for project mipicam ****
-make all 
-Info: Building ../mipicam_bsp/
-C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
-[BSP build complete]
-[mipicam build complete]
-16:15:42 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
-make all 
-[BSP build complete]
-17:10:10 **** Incremental Build of configuration Nios II for project mipicam ****
-make all 
-Info: Building ../mipicam_bsp/
-C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
-[BSP build complete]
-Info: Compiling auto_focus.c to obj/default/auto_focus.o
-nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/auto_focus.o auto_focus.c
-auto_focus.c: In function 'Focus_Window':
-auto_focus.c:73:11: warning: 'end_focus' may be used uninitialized in this function [-Wmaybe-uninitialized]
-    return end_focus;
-           ^
+Info: Compiling ddr3_circular_buf.c to obj/default/ddr3_circular_buf.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/ddr3_circular_buf.o ddr3_circular_buf.c
 Info: Compiling main.c to obj/default/main.o
 nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
-Info: Compiling mipi_bridge_config.c to obj/default/mipi_bridge_config.o
-nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mipi_bridge_config.o mipi_bridge_config.c
-Info: Compiling mipi_camera_config.c to obj/default/mipi_camera_config.o
-nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mipi_camera_config.o mipi_camera_config.c
-mipi_camera_config.c: In function 'OV8865_StartStop_Streaming':
-mipi_camera_config.c:541:2: error: 'bSuccess' undeclared (first use in this function)
-  bSuccess = oc_i2c_init_ex(I2C_OPENCORES_CAMERA_BASE, 125*1000*1000,400*1000); //I2C: 400K
+In file included from main.c:6:0:
+ocm_dma_buf.h:25:8: error: no macro name given in #define directive
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
   ^
-mipi_camera_config.c:541:2: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [obj/default/mipi_camera_config.o] Error 1
-17:10:11 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
-make all 
-[BSP build complete]
-17:10:32 **** Incremental Build of configuration Nios II for project mipicam ****
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:244:2: error: 'dma_buf_region_idx' undeclared (first use in this function)
+  dma_buf_region_idx  = 0;
+  ^
+main.c:244:2: note: each undeclared identifier is reported only once for each function it appears in
+main.c:250:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:277:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c: In function 'FIFO_read':
+main.c:283:7: error: too few arguments to function 'circ_bbuf_is_full'
+   if (circ_bbuf_is_full()) break;
+       ^
+In file included from main.c:5:0:
+ddr3_circular_buf.h:31:5: note: declared here
+ int circ_bbuf_is_full (Circular_buf_st *ddr);
+     ^
+main.c: At top level:
+main.c:318:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:250:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+main.c: In function 'OCM_write':
+main.c:326:42: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+   if(dma_ocm_is_full(&dmaocmbuf[dmaocmreg->head])){
+                                          ^
+main.c:328:13: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+    dmaocmreg->tail = (alt_u16)dma_mem_status; // read dma->tail from csr regmap
+             ^
+In file included from common_includes.h:13:0,
+                 from main.c:1:
+main.c:338:49: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+     IOWR(CSR_REGMAP_BASE, 6, ((alt_u32)dmaocmreg->head << 16)|(dma_mem_status & 0x0000FFFF));
+                                                 ^
+../mipicam_bsp//HAL/inc/io.h:75:66: note: in definition of macro 'IOWR'
+   __builtin_stwio (__IO_CALC_ADDRESS_NATIVE ((BASE), (REGNUM)), (DATA))
+                                                                  ^
+main.c:356:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:359:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:363:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:366:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:369:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:373:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:376:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:379:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:383:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+make: *** [obj/default/main.o] Error 1
+16:41:55 **** Incremental Build of configuration Nios II for project mipicam ****
 make all 
 Info: Building ../mipicam_bsp/
 C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
 [BSP build complete]
-Info: Compiling mipi_camera_config.c to obj/default/mipi_camera_config.o
-nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/mipi_camera_config.o mipi_camera_config.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from main.c:6:0:
+ocm_dma_buf.h:25:8: error: no macro name given in #define directive
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
+  ^
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:244:2: error: 'dma_buf_region_idx' undeclared (first use in this function)
+  dma_buf_region_idx  = 0;
+  ^
+main.c:244:2: note: each undeclared identifier is reported only once for each function it appears in
+main.c:250:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:277:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c: In function 'FIFO_read':
+main.c:283:7: error: too few arguments to function 'circ_bbuf_is_full'
+   if (circ_bbuf_is_full()) break;
+       ^
+In file included from main.c:5:0:
+ddr3_circular_buf.h:31:5: note: declared here
+ int circ_bbuf_is_full (Circular_buf_st *ddr);
+     ^
+main.c: At top level:
+main.c:318:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:250:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+main.c: In function 'OCM_write':
+main.c:326:42: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+   if(dma_ocm_is_full(&dmaocmbuf[dmaocmreg->head])){
+                                          ^
+main.c:328:13: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+    dmaocmreg->tail = (alt_u16)dma_mem_status; // read dma->tail from csr regmap
+             ^
+In file included from common_includes.h:13:0,
+                 from main.c:1:
+main.c:338:49: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+     IOWR(CSR_REGMAP_BASE, 6, ((alt_u32)dmaocmreg->head << 16)|(dma_mem_status & 0x0000FFFF));
+                                                 ^
+../mipicam_bsp//HAL/inc/io.h:75:66: note: in definition of macro 'IOWR'
+   __builtin_stwio (__IO_CALC_ADDRESS_NATIVE ((BASE), (REGNUM)), (DATA))
+                                                                  ^
+main.c:356:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:359:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:363:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:366:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:369:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:373:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:376:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:379:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:383:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+make: *** [obj/default/main.o] Error 1
+16:41:56 **** Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:43:58 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from main.c:6:0:
+ocm_dma_buf.h:25:8: error: no macro name given in #define directive
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
+  ^
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:249:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:276:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c: In function 'FIFO_read':
+main.c:282:7: error: too few arguments to function 'circ_bbuf_is_full'
+   if (circ_bbuf_is_full()) break;
+       ^
+In file included from main.c:5:0:
+ddr3_circular_buf.h:31:5: note: declared here
+ int circ_bbuf_is_full (Circular_buf_st *ddr);
+     ^
+main.c: At top level:
+main.c:317:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:249:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+In file included from common_includes.h:13:0,
+                 from main.c:1:
+main.c: In function 'OCM_write':
+main.c:337:49: error: invalid type argument of '->' (have 'dma_reg_st {aka struct <anonymous>}')
+     IOWR(CSR_REGMAP_BASE, 6, ((alt_u32)dmaocmreg->head << 16)|(dma_mem_status & 0x0000FFFF));
+                                                 ^
+../mipicam_bsp//HAL/inc/io.h:75:66: note: in definition of macro 'IOWR'
+   __builtin_stwio (__IO_CALC_ADDRESS_NATIVE ((BASE), (REGNUM)), (DATA))
+                                                                  ^
+main.c:355:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:357:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:362:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:365:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:367:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:372:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:375:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:377:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:382:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+make: *** [obj/default/main.o] Error 1
+16:43:59 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:44:16 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from main.c:6:0:
+ocm_dma_buf.h:25:8: error: no macro name given in #define directive
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
+  ^
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:249:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:276:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c: In function 'FIFO_read':
+main.c:282:7: error: too few arguments to function 'circ_bbuf_is_full'
+   if (circ_bbuf_is_full()) break;
+       ^
+In file included from main.c:5:0:
+ddr3_circular_buf.h:31:5: note: declared here
+ int circ_bbuf_is_full (Circular_buf_st *ddr);
+     ^
+main.c: At top level:
+main.c:317:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:249:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+main.c: In function 'OCM_write':
+main.c:355:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:357:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:362:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:365:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:367:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:372:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:375:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:377:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:382:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:48:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+make: *** [obj/default/main.o] Error 1
+16:44:17 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:44:32 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
+  ^
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:249:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:276:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c: In function 'FIFO_read':
+main.c:282:7: error: too few arguments to function 'circ_bbuf_is_full'
+   if (circ_bbuf_is_full()) break;
+       ^
+In file included from main.c:5:0:
+ddr3_circular_buf.h:31:5: note: declared here
+ int circ_bbuf_is_full (Circular_buf_st *ddr);
+     ^
+main.c: At top level:
+main.c:317:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:249:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+main.c: In function 'OCM_write':
+main.c:355:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:357:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:362:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:365:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:367:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:372:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:375:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:377:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:382:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+make: *** [obj/default/main.o] Error 1
+16:44:33 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:45:24 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
+  ^
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:249:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:276:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c:317:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:249:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+main.c: In function 'OCM_write':
+main.c:355:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:357:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:362:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:365:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:367:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:372:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:375:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:377:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:382:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+Info: Compiling ocm_dma_buf.c to obj/default/ocm_dma_buf.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/ocm_dma_buf.o ocm_dma_buf.c
+ocm_dma_buf.c: In function 'dma_ocm_buf_init':
+ocm_dma_buf.c:11:11: error: request for member 'head' in something not a structure or union
+   *(ocm+i)->head = 0;
+           ^
+ocm_dma_buf.c:12:11: error: request for member 'tail' in something not a structure or union
+   *(ocm+i)->tail = 0;
+           ^
+ocm_dma_buf.c:13:11: error: request for member 'offset' in something not a structure or union
+   *(ocm+i)->offset = OCM_MAX_LENGTH*i;
+           ^
+ocm_dma_buf.c:14:11: error: request for member 'maxlen' in something not a structure or union
+   *(ocm+i)->maxlen = OCM_MAX_LENGTH;
+           ^
+ocm_dma_buf.c: In function 'dma_ocm_reg_switch':
+ocm_dma_buf.c:46:24: error: 'dmaocmreg' undeclared (first use in this function)
+  if(dma_next_region == dmaocmreg->tail) return -1; // failed to switch, all regions used up
+                        ^
+ocm_dma_buf.c:46:24: note: each undeclared identifier is reported only once for each function it appears in
+ocm_dma_buf.c: In function 'dma_ocm_reg_is_full':
+ocm_dma_buf.c:57:24: error: 'dmaocmreg' undeclared (first use in this function)
+  if(dma_next_region == dmaocmreg->tail) return 1;
+                        ^
+ocm_dma_buf.c: In function 'dma_ocm_buf_init':
+ocm_dma_buf.c:16:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+ocm_dma_buf.c: In function 'dma_ocm_reg_switch':
+ocm_dma_buf.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+ocm_dma_buf.c: In function 'dma_ocm_reg_is_full':
+ocm_dma_buf.c:59:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [obj/default/ocm_dma_buf.o] Error 1
+16:45:25 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:46:04 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling ocm_dma_buf.c to obj/default/ocm_dma_buf.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/ocm_dma_buf.o ocm_dma_buf.c
+ocm_dma_buf.c: In function 'dma_ocm_buf_init':
+ocm_dma_buf.c:11:11: error: request for member 'head' in something not a structure or union
+   *(ocm+i)->head = 0;
+           ^
+ocm_dma_buf.c:12:11: error: request for member 'tail' in something not a structure or union
+   *(ocm+i)->tail = 0;
+           ^
+ocm_dma_buf.c:13:11: error: request for member 'offset' in something not a structure or union
+   *(ocm+i)->offset = OCM_MAX_LENGTH*i;
+           ^
+ocm_dma_buf.c:14:11: error: request for member 'maxlen' in something not a structure or union
+   *(ocm+i)->maxlen = OCM_MAX_LENGTH;
+           ^
+ocm_dma_buf.c:16:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [obj/default/ocm_dma_buf.o] Error 1
+16:46:05 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:48:31 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling ocm_dma_buf.c to obj/default/ocm_dma_buf.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/ocm_dma_buf.o ocm_dma_buf.c
+ocm_dma_buf.c: In function 'dma_ocm_buf_init':
+ocm_dma_buf.c:14:20: error: assignment of read-only member 'maxlen'
+   (*ocm+i)->maxlen = OCM_MAX_LENGTH;
+                    ^
+ocm_dma_buf.c:16:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [obj/default/ocm_dma_buf.o] Error 1
+16:48:32 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:49:04 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c: In function 'fifo_irq':
+main.c:165:2: warning: implicit declaration of function 'FIFO_read' [-Wimplicit-function-declaration]
+  FIFO_read();
+  ^
+main.c: In function 'main':
+main.c:230:29: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  void* fifo_irq_event_ptr = &fifo_irq_event;
+                             ^
+main.c:233:2: warning: implicit declaration of function 'alt_irq_handler' [-Wimplicit-function-declaration]
+  alt_irq_handler(FIFO_0_IN_CSR_IRQ, fifo_irq_event_ptr, fifo_irq);
+  ^
+main.c:249:4: warning: implicit declaration of function 'OCM_write' [-Wimplicit-function-declaration]
+    OCM_write();
+    ^
+main.c: At top level:
+main.c:276:6: warning: conflicting types for 'FIFO_read'
+ void FIFO_read(void){
+      ^
+main.c:165:2: note: previous implicit declaration of 'FIFO_read' was here
+  FIFO_read();
+  ^
+main.c:317:6: warning: conflicting types for 'OCM_write'
+ void OCM_write(void){
+      ^
+main.c:249:4: note: previous implicit declaration of 'OCM_write' was here
+    OCM_write();
+    ^
+main.c: In function 'OCM_write':
+main.c:355:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_HEADER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:357:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:358:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:362:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:365:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_CONTENT);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:367:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:368:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:372:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:375:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, FRAME_FOOTER);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:377:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, header_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:378:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+main.c:382:23: warning: passing argument 1 of 'dma_ocm_buf_push' from incompatible pointer type [-Wincompatible-pointer-types]
+      dma_ocm_buf_push(&dmaocmbuf, ddr3_data);
+                       ^
+In file included from main.c:6:0:
+ocm_dma_buf.h:47:5: note: expected 'dma_buf_st * {aka struct <anonymous> *}' but argument is of type 'dma_buf_st (*)[2] {aka struct <anonymous> (*)[2]}'
+ int dma_ocm_buf_push (dma_buf_st *ocm, alt_u32 data);
+     ^
+Info: Compiling ocm_dma_buf.c to obj/default/ocm_dma_buf.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/ocm_dma_buf.o ocm_dma_buf.c
+ocm_dma_buf.c: In function 'dma_ocm_buf_init':
+ocm_dma_buf.c:16:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 Info: Linking mipicam.elf
-nios2-elf-g++  -T'../mipicam_bsp//linker.x' -msys-crt0='../mipicam_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../mipicam_bsp/   -Wl,-Map=mipicam.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o mipicam.elf obj/default/I2C_core.o obj/default/auto_focus.o obj/default/main.o obj/default/mipi_bridge_config.o obj/default/mipi_camera_config.o -lm -msys-lib=m
-nios2-elf-insert mipicam.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x400810d8 --timestamp 1643928657 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name top --quartus_project_dir "C:/Users/quoch/OneDrive/Documents/github/mipi_cam_fpga_cycle_v_system_design/hardware_design/rtl_design" --jdi ../..//output_files/PCIe_DDR3.jdi --sopcinfo C:/Users/quoch/OneDrive/Documents/github/mipi_cam_fpga_cycle_v_system_design/hardware_design/rtl_design/software/mipicam_bsp/../../top.sopcinfo
-Info: (mipicam.elf) 80 KBytes program size (code + initialized data).
-Info:               38 KBytes free for stack + heap.
+nios2-elf-g++  -T'../mipicam_bsp//linker.x' -msys-crt0='../mipicam_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../mipicam_bsp/   -Wl,-Map=mipicam.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o mipicam.elf obj/default/I2C_core.o obj/default/auto_focus.o obj/default/ddr3_circular_buf.o obj/default/main.o obj/default/mipi_bridge_config.o obj/default/mipi_camera_config.o obj/default/ocm_dma_buf.o -lm -msys-lib=m
+obj/default/ocm_dma_buf.o: In function `circ_bbuf_push':
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/ocm_dma_buf.c:18: multiple definition of `circ_bbuf_push'
+obj/default/ddr3_circular_buf.o:C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/ddr3_circular_buf.c:10: first defined here
+c:/intelfpga/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: Disabling relaxation: it will not work with multiple definitions
+obj/default/main.o: In function `OCM_write':
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:355: undefined reference to `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:355:(.text+0x894): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:357: undefined reference to `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:357:(.text+0x8cc): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:358: undefined reference to `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:358:(.text+0x8e0): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:362: undefined reference to `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:362:(.text+0x900): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:365: undefined reference to `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:365:(.text+0x918): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+obj/default/main.o:C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:367: more undefined references to `dma_ocm_buf_push' follow
+obj/default/main.o: In function `OCM_write':
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:367:(.text+0x950): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:368:(.text+0x964): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:372:(.text+0x984): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:375:(.text+0x99c): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:377:(.text+0x9d4): relocation truncated to fit: R_NIOS2_CALL26 against `dma_ocm_buf_push'
+C:\Users\quoch\OneDrive\Documents\github\mipi_cam_fpga_cycle_v_system_design\hardware_design\rtl_design\software\mipicam/main.c:378:(.text+0x9e8): additional relocation overflows omitted from the output
+collect2.exe: error: ld returned 1 exit status
+make: *** [mipicam.elf] Error 1
+16:49:06 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+16:50:49 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+Info: Compiling ocm_dma_buf.c to obj/default/ocm_dma_buf.o
+nios2-elf-gcc -xc -MP -MMD -c -I../mipicam_bsp//HAL/inc -I../mipicam_bsp/ -I../mipicam_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/ocm_dma_buf.o ocm_dma_buf.c
+ocm_dma_buf.c: In function 'dma_ocm_buf_init':
+ocm_dma_buf.c:16:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Linking mipicam.elf
+nios2-elf-g++  -T'../mipicam_bsp//linker.x' -msys-crt0='../mipicam_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../mipicam_bsp/   -Wl,-Map=mipicam.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o mipicam.elf obj/default/I2C_core.o obj/default/auto_focus.o obj/default/ddr3_circular_buf.o obj/default/main.o obj/default/mipi_bridge_config.o obj/default/mipi_camera_config.o obj/default/ocm_dma_buf.o -lm -msys-lib=m
+nios2-elf-insert mipicam.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x400810f8 --timestamp 1644360235 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name top --quartus_project_dir "C:/Users/quoch/OneDrive/Documents/github/mipi_cam_fpga_cycle_v_system_design/hardware_design/rtl_design" --jdi ../..//output_files/PCIe_DDR3.jdi --sopcinfo C:/Users/quoch/OneDrive/Documents/github/mipi_cam_fpga_cycle_v_system_design/hardware_design/rtl_design/software/mipicam_bsp/../../top.sopcinfo
+Info: (mipicam.elf) 84 KBytes program size (code + initialized data).
+Info:               35 KBytes free for stack + heap.
 Info: Creating mipicam.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source mipicam.elf >mipicam.objdump
 [mipicam build complete]
-17:10:33 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+16:50:51 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
+make all 
+[BSP build complete]
+17:49:30 **** Incremental Build of configuration Nios II for project mipicam ****
+make all 
+Info: Building ../mipicam_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../mipicam_bsp/
+[BSP build complete]
+[mipicam build complete]
+17:49:30 **** Incremental Build of configuration Nios II for project mipicam_bsp ****
 make all 
 [BSP build complete]
